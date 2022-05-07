@@ -20,5 +20,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.18" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.18" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.18" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.18" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.18" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.18" level="project" />
   </component>
 </module>

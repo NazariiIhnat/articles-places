@@ -8,6 +8,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/barbecue/barbecue/1.5-beta1/barbecue-1.5-beta1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/barbecue/barbecue/1.5-beta1/barbecue-1.5-beta1.jar!/" />
     </SOURCES>
   </library>
 </component>
