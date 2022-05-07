@@ -1,7 +1,6 @@
-package entites;
+package entities;
 
 import lombok.Data;
-import net.sourceforge.barbecue.Barcode;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +13,7 @@ public class Container {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "container_id")
     private long id;
-    private Barcode barcode;
+    private String barcode;
     private String barcodeName;
 
     @ManyToOne
