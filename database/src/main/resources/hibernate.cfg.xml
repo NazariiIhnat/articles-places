@@ -15,7 +15,7 @@
         <property name="hibernate.connection.characterEncoding">UTF-8</property>
         <property name="hibernate.connection.useUnicode">true</property>
         <property name="hibernate.connection.pool_size">10</property>
-        <mapping class="entites.Article"/>
-        <mapping class="entites.Container"/>
+        <mapping class="entities.Article"/>
+        <mapping class="entities.Container"/>
     </session-factory>
 </hibernate-configuration>
