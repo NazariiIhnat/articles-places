@@ -4,7 +4,6 @@
     <list default="true" id="5612223e-8709-4494-9454-806f510e84e3" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/target/classes/BackendComponentsScan.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/target/classes/Main.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/target/classes/DatabaseComponentScan.class" afterDir="false" />
@@ -21,18 +20,12 @@
       <change afterPath="$PROJECT_DIR$/gui/target/classes/components/ArticlesTable.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gui/target/classes/components/MainFrame.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gui/target/classes/components/TreeItemList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_barbecue_barbecue_1_5_beta1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_barbecue_barbecue_1_5_beta1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/BackendComponentsScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/BackendComponentsScan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/barcode/BarcodeGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/src/main/java/entities/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/entities/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/gui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gui/gui.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gui/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/CreateContainerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main/java/components/UserReadableInfoSetFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java" afterDir="false" />
@@ -99,10 +92,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="165">
               <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -114,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
+            <state relative-caret-position="493">
               <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -126,7 +119,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="102">
               <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -145,10 +138,10 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
+            <state relative-caret-position="420">
               <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -160,7 +153,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="544">
               <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -299,6 +292,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -459,8 +454,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -611,6 +604,7 @@
       <workItem from="1653116645471" duration="5851000" />
       <workItem from="1653209426915" duration="9816000" />
       <workItem from="1653244046826" duration="3002000" />
+      <workItem from="1653279896023" duration="355000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed poms. The project builds successfully.">
       <created>1648757636642</created>
@@ -717,7 +711,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651918731073</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Update autogenerated files">
+      <created>1653280259284</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1653280259284</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -753,12 +754,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156419000" />
+    <option name="totallyTimeSpent" value="156774000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23524962" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23903178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -889,7 +890,8 @@
     <MESSAGE value="Created main frame and components for it." />
     <MESSAGE value="Created dialog for generating barcode" />
     <MESSAGE value="Created possibility to generate barcode (without saving in db)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created possibility to generate barcode (without saving in db)" />
+    <MESSAGE value="Update autogenerated files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update autogenerated files" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/gui/pom.xml">
@@ -1105,22 +1107,7 @@
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/4_ID44.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/ondyrtgysjr_ID15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123_ID45.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/ondyrtgysjr_ID15.png" />
     <entry file="jar://$MAVEN_REPOSITORY$/net/sourceforge/barbecue/barbecue/1.5-beta1/barbecue-1.5-beta1-sources.jar!/net/sourceforge/barbecue/Barcode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -1128,25 +1115,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/ondyrtgysjrqwdqwfqwr_ID15.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/snfhtusifjeutyo_ID15.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/snfhtusifjeutyoifort_ID15.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/qewrt_ID15.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/qewr_ID15.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/12345678910_ID15.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123456789111315_ID15.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123456789111314wef eger gwerg rth wrth egqrg qegqwef qwef_ID15.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        <state relative-caret-position="165">
+          <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/ondyrtgysjrqwdqwfqwr_ID15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/snfhtusifjeutyo_ID15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="493">
           <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1154,41 +1143,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/snfhtusifjeutyoifort_ID15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/Wypredaż tescoma_ID46.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/qewrt_ID15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="102">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/qewr_ID15.png">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123_ID45.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/12345678910_ID15.png">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/Wypredaż tescoma_ID46.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123456789111315_ID15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123456789111314wef eger gwerg rth wrth egqrg qegqwef qwef_ID15.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java">
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
+        <state relative-caret-position="544">
+          <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
