@@ -23,6 +23,11 @@ public class MainFrame extends JFrame {
         initGenerateBtn();
     }
 
+    public static void main(String[] args) {
+        MainFrame frame = new MainFrame();
+        frame.setVisible(true);
+    }
+
     private void initMainFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 409, 339);
@@ -38,7 +43,7 @@ public class MainFrame extends JFrame {
     }
 
     private void initArticlesTable() {
-        articlesTable.getScrollPane().setBounds(181, 11, 199, 239);
+        articlesTable.getScrollPane().setBounds(181, 11, 204, 239);
         contentPane.add(articlesTable.getScrollPane());
     }
 
