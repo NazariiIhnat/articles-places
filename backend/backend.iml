@@ -18,7 +18,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="gui" />
     <orderEntry type="module" module-name="database" />
-    <orderEntry type="library" name="Maven: net.sourceforge.barbecue:barbecue:1.5-beta1" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:1.4.200" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.6.7.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.4.3.Final" level="project" />
@@ -36,6 +35,7 @@
     <orderEntry type="library" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" level="project" />
     <orderEntry type="library" name="Maven: org.jvnet.staxex:stax-ex:1.8" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
+    <orderEntry type="library" name="Maven: net.sourceforge.barbecue:barbecue:1.5-beta1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.18" level="project" />

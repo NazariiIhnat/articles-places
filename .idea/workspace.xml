@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5612223e-8709-4494-9454-806f510e84e3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/BackendComponentsScan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/target/classes/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/target/classes/DatabaseComponentScan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/target/classes/connection/HibernateUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/target/classes/dao/ArticleDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/target/classes/dao/ContainerDAO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/target/classes/dao/ContainerDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/target/classes/entities/Article.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/target/classes/entities/Container.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/target/classes/GUIComponentsScan.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/target/classes/META-INF/gui.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/target/classes/components/ArticlesTable$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/target/classes/components/ArticlesTable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/target/classes/components/MainFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui/target/classes/components/TreeItemList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_barbecue_barbecue_1_5_beta1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_barbecue_barbecue_1_5_beta1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/BackendComponentsScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/BackendComponentsScan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/barcode/BarcodeGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database.iml" beforeDir="false" afterPath="$PROJECT_DIR$/database/database.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/main/java/entities/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/entities/Container.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/gui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gui/gui.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gui/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/CreateContainerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main/java/components/UserReadableInfoSetFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/WatermarkedTextField.java" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/database/target/" />
+    <ignored path="$PROJECT_DIR$/backend/target/" />
+    <ignored path="$PROJECT_DIR$/gui/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="articles" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="articles" type="feb32156:DbDataSourceImpl" />
+        <item name="ARTICLES: database" type="2aa06773:H2ImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="articles" type="feb32156:DbDataSourceImpl" />
+        <item name="ARTICLES: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="articles" type="feb32156:DbDataSourceImpl" />
+        <item name="ARTICLES: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="ARTICLE: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="articles" type="feb32156:DbDataSourceImpl" />
+        <item name="ARTICLES: database" type="2aa06773:H2ImplModel$Database" />
+        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
+        <item name="CONTAINER: table" type="818c1b4a:H2ImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123_ID45.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/Wypredaż tescoma_ID46.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>calculateSiz</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/database/src/main/java/DatabaseComponentScan.java" />
+        <option value="$PROJECT_DIR$/database/src/main/java/dao/ArticleDAO.java" />
+        <option value="$PROJECT_DIR$/database/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/barcode/BarcodeGenerator.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/barcode/images/FixBarcode.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/barcode/BarcodeSaver.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/BarcodeSaver.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/TreeDemo.java" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/TreeCellRenderDemo.java" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/Element.java" />
+        <option value="$PROJECT_DIR$/database/src/main/java/Start.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/50a20e0b-f7b9-471a-9c93-0519053f7856/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e6327fb8-fa2d-4f7e-841c-fe61f4ececec/console.sql" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/TreeNode.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/TreeNodeWithID.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/ContainerToTreeLoader.java" />
+        <option value="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java" />
+        <option value="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAO.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/barcode/BarcodeCreator.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/SelectedContainersCRUDable.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/barcode/BarcodeHandler.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/BackendComponentsScan.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/utils/JTreeOperationsHandler.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/Test.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/utils/JTreeOperationsHandlerImpl.java" />
+        <option value="$PROJECT_DIR$/gui/pom.xml" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/Model.java" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/TreeModel.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/SelectedContainersCRUD.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/ContainerSaver.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/TreePopulator.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/ContainersCRUDable.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/ContainersCRUD.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/Updater.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/Deleter.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/ContainersToTreeLoader.java" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java" />
+        <option value="$PROJECT_DIR$/database/src/main/java/entities/Container.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/59072847-b326-404b-b308-2457ec985688/console.sql" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/ContainersHandler.java" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/UserReadableInfoSetFrame.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/UserReadableInfoUpdater.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/container/Saver.java" />
+        <option value="$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="articlesPlace" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="articlesPlace" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="backend" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="backend" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="database" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="database" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="gui" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="gui" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1346" />
+    <option name="height" value="698" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="container" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="connection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
+              <item name="articles place" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="h2&#10;h2.unified" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Multi_task_manager/MultiTaskManager/backend/src/main/java/Start.java" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ImageHandlerImpl">
+    <configuration name="ImageHandlerImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.ImageHandlerImpl" />
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JTreeOperationsHandlerImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.JTreeOperationsHandlerImpl" />
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="components.MainFrame" />
+      <module name="gui" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Start" />
+      <module name="database" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ImageHandlerImpl" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.MainFrame" />
+        <item itemvalue="Application.JTreeOperationsHandlerImpl" />
+        <item itemvalue="Application.Start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5612223e-8709-4494-9454-806f510e84e3" name="Default Changelist" comment="" />
+      <created>1648666297644</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648666297644</updated>
+      <workItem from="1648666300492" duration="4498000" />
+      <workItem from="1648751815389" duration="4906000" />
+      <workItem from="1648756866240" duration="3140000" />
+      <workItem from="1648760124860" duration="49000" />
+      <workItem from="1649183034694" duration="6267000" />
+      <workItem from="1649344215199" duration="3483000" />
+      <workItem from="1649351572185" duration="6348000" />
+      <workItem from="1649528434539" duration="12849000" />
+      <workItem from="1649570587699" duration="1647000" />
+      <workItem from="1649606467944" duration="1733000" />
+      <workItem from="1649693129151" duration="841000" />
+      <workItem from="1649702357337" duration="3636000" />
+      <workItem from="1651585949112" duration="64000" />
+      <workItem from="1651774378759" duration="1769000" />
+      <workItem from="1651776527690" duration="3293000" />
+      <workItem from="1651818469688" duration="1573000" />
+      <workItem from="1651856050857" duration="3973000" />
+      <workItem from="1651860478650" duration="1940000" />
+      <workItem from="1651916948711" duration="8633000" />
+      <workItem from="1651939136644" duration="6107000" />
+      <workItem from="1651949001362" duration="5247000" />
+      <workItem from="1651955199400" duration="804000" />
+      <workItem from="1652109472193" duration="746000" />
+      <workItem from="1652110338241" duration="2155000" />
+      <workItem from="1652122254495" duration="3075000" />
+      <workItem from="1652196659777" duration="3109000" />
+      <workItem from="1652214946710" duration="1312000" />
+      <workItem from="1652298502069" duration="2251000" />
+      <workItem from="1652369358390" duration="2077000" />
+      <workItem from="1652375399894" duration="1764000" />
+      <workItem from="1652383959135" duration="1960000" />
+      <workItem from="1652625019338" duration="3829000" />
+      <workItem from="1652713522541" duration="3041000" />
+      <workItem from="1652726117842" duration="586000" />
+      <workItem from="1652760195044" duration="3337000" />
+      <workItem from="1652801649512" duration="2635000" />
+      <workItem from="1652813966160" duration="3809000" />
+      <workItem from="1652847033213" duration="3009000" />
+      <workItem from="1652895879586" duration="6156000" />
+      <workItem from="1652933898600" duration="2110000" />
+      <workItem from="1652977532915" duration="3098000" />
+      <workItem from="1652988670528" duration="1966000" />
+      <workItem from="1653018516088" duration="2925000" />
+      <workItem from="1653116645471" duration="5851000" />
+      <workItem from="1653209426915" duration="9816000" />
+      <workItem from="1653244046826" duration="3002000" />
+    </task>
+    <task id="LOCAL-00001" summary="Fixed poms. The project builds successfully.">
+      <created>1648757636642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648757636642</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Able correctly connect to DB. Created entities and connection file.">
+      <created>1649347741760</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649347741760</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changed barcode field of Container class From Barcode to String.">
+      <created>1651917896065</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651917896065</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added Spring dependencies">
+      <created>1651917989189</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651917989189</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added gui and database dependencies to backend pom and set parent">
+      <created>1651918089167</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918089167</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Typo. Add Container class to Hibernate configuration.">
+      <created>1651918203608</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918203608</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Set parent to gui pom.">
+      <created>1651918261136</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918261136</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update of auto generated files.">
+      <created>1651918301708</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918301708</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Application start class.">
+      <created>1651918414190</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918414190</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Created component scan classes for each module">
+      <created>1651918488947</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918488947</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Dao for container class">
+      <created>1651918541154</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918541154</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Article dao interface created">
+      <created>1651918584510</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918584511</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Created main frame and components for it.">
+      <created>1651918629516</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918629516</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Created dialog for generating barcode">
+      <created>1651918682776</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918682776</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Created possibility to generate barcode (without saving in db)">
+      <created>1651918731073</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1651918731073</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 26m 42s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 27m 21s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 28m 53s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 29m 31s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 31m 10s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 32m 24s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 33m 43s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 45m 40s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 46m 26s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ContainerDAOImplTest_saveTest - 2022.04.07 at 20h 50m 28s.xml">
+      <configuration name="ContainerDAOImplTest.saveTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="156419000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23524962" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Persistence" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32850242" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32850242" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32850242" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32850242" />
+      <window_info anchor="bottom" id="Spring" order="15" weight="0.32850242" />
+      <window_info anchor="bottom" id="Thumbnails" order="16" weight="0.32850242" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32980332" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.28668684" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31467474" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Persistence" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32850242" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993559" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32850242" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32850242" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32850242" />
+      <window_info anchor="bottom" id="Spring" order="15" weight="0.32850242" />
+      <window_info anchor="bottom" id="Thumbnails" order="16" weight="0.32850242" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32980332" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.28668684" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed poms. The project builds successfully." />
+    <MESSAGE value="Able correctly connect to DB. Created entities and connection file." />
+    <MESSAGE value="Changed barcode field of Container class From Barcode to String." />
+    <MESSAGE value="Added Spring dependencies" />
+    <MESSAGE value="Added gui and database dependencies to backend pom and set parent" />
+    <MESSAGE value="Typo. Add Container class to Hibernate configuration." />
+    <MESSAGE value="Set parent to gui pom." />
+    <MESSAGE value="Update of auto generated files." />
+    <MESSAGE value="Application start class." />
+    <MESSAGE value="Created component scan classes for each module" />
+    <MESSAGE value="Dao for container class" />
+    <MESSAGE value="Article dao interface created" />
+    <MESSAGE value="Created main frame and components for it." />
+    <MESSAGE value="Created dialog for generating barcode" />
+    <MESSAGE value="Created possibility to generate barcode (without saving in db)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created possibility to generate barcode (without saving in db)" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gui/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/TreeNodeWithID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/Test.java" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/SelectedContainersCRUDable.java" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersCRUDable.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.10/lib/src.zip!/java.desktop/javax/swing/JTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29359">
+          <caret line="1830" column="18" selection-start-line="1830" selection-start-column="18" selection-end-line="1830" selection-end-column="18" />
+          <folding>
+            <element signature="e#30010#30011#0" expanded="true" />
+            <element signature="e#30042#30043#0" expanded="true" />
+            <element signature="e#63825#63826#0" expanded="true" />
+            <element signature="e#63883#63884#0" expanded="true" />
+            <element signature="e#68121#68122#0" expanded="true" />
+            <element signature="e#68178#68179#0" expanded="true" />
+            <element signature="e#97496#97497#0" expanded="true" />
+            <element signature="e#97548#97549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.10/lib/src.zip!/java.desktop/javax/swing/tree/DefaultTreeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3451">
+          <caret line="243" column="16" selection-start-line="243" selection-start-column="16" selection-end-line="243" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/WYPRZEDSŻ_ID1.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/tree_ID3.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/rwrwrrw_ID4.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/Deleter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/ArticlesTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-338">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/12313_ID35.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersToTreeLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/src/main/java/entities/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#922#923#0" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/src/main/java/dao/ContainerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#23#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/59072847-b326-404b-b308-2457ec985688/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/CustomTreeModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/test_ID40.png" />
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.10/lib/src.zip!/java.base/java/io/FileFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/Test_ID44.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/name_ID44.png" />
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/78_ID44.png" />
+    <entry file="das://59072847-b326-404b-b308-2457ec985688/database/ARTICLES/schema/PUBLIC/table/CONTAINER">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://59072847-b326-404b-b308-2457ec985688/database/ARTICLES/schema/PUBLIC/table/ARTICLE">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/Saver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/UserReadableInfoUpdater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/UserReadableInfoSetFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.10/lib/src.zip!/java.desktop/javax/swing/JComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="1738" column="16" selection-start-line="1738" selection-start-column="16" selection-end-line="1738" selection-end-column="16" />
+          <folding>
+            <element signature="e#65901#65902#0" expanded="true" />
+            <element signature="e#65950#65951#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/4_ID44.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/ondyrtgysjr_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123_ID45.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sourceforge/barbecue/barbecue/1.5-beta1/barbecue-1.5-beta1-sources.jar!/net/sourceforge/barbecue/Barcode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="167" column="16" selection-start-line="167" selection-start-column="16" selection-end-line="167" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/ondyrtgysjrqwdqwfqwr_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/snfhtusifjeutyo_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/snfhtusifjeutyoifort_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/Wypredaż tescoma_ID46.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/qewrt_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/qewr_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/12345678910_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123456789111315_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123456789111314wef eger gwerg rth wrth egqrg qegqwef qwef_ID15.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
