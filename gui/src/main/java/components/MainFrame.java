@@ -13,12 +13,10 @@ public class MainFrame extends JFrame {
     private TreeItemList treeItemList;
     private ArticlesTable articlesTable;
     private JButton generateBtn;
-    private CreateContainerDialog createContainerDialog;
 
     public MainFrame() {
         this.treeItemList = new TreeItemList();
         this.articlesTable = new ArticlesTable();
-        createContainerDialog = new CreateContainerDialog(this);
         initMainFrame();
         initTreeItemList();
         initArticlesTable();
@@ -48,8 +46,5 @@ public class MainFrame extends JFrame {
         generateBtn = new JButton("Generuj");
         generateBtn.setBounds(10, 261, 89, 23);
         contentPane.add(generateBtn);
-        getGenerateBtn().addActionListener(e -> {
-            createContainerDialog.setVisible(true);
-        });
     }
 }

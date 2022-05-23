@@ -4,12 +4,12 @@ import lombok.Getter;
 import javax.swing.*;
 
 @Getter
-public class CreateContainerDialog extends JDialog{
+public class UserReadableInfoSetFrame extends JDialog{
 
-    private WatermarkedTextField textField;
+    private JTextField textField;
     private JButton okBtn;
 
-    public CreateContainerDialog(JFrame owner) {
+    public UserReadableInfoSetFrame(JFrame owner) {
         super(owner, true);
         setBounds(100, 100, 237, 80);
         getContentPane().setLayout(null);
@@ -18,7 +18,7 @@ public class CreateContainerDialog extends JDialog{
     }
 
     private void initTextField() {
-        textField = new WatermarkedTextField("Nazwa");
+        textField = new JTextField();
         textField.setBounds(10, 11, 138, 20);
         getContentPane().add(textField);
         textField.setColumns(10);

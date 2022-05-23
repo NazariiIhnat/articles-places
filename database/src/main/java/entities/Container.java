@@ -13,14 +13,13 @@ public class Container {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "container_id")
     private long id;
-    private String barcode;
-    private String barcodeName;
+    private String userReadableInfo;
 
     @ManyToOne
     @JoinColumn(name = "parent_id")
     private Container parentContainer;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "parent_id")
     private List<Container> childContainers = new ArrayList<>();
 
@@ -36,10 +35,15 @@ public class Container {
     }
 
     public boolean hasChildContainer() {
-        return this.childContainers.size() != 0;
+        return this.childContainers != null;
     }
 
     public boolean hasParentContainer() {
         return this.parentContainer != null;
+    }
+
+    @Override
+    public String toString() {
+        return getUserReadableInfo();
     }
 }
