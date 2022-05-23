@@ -1,36 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5612223e-8709-4494-9454-806f510e84e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/target/classes/BackendComponentsScan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/target/classes/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/target/classes/DatabaseComponentScan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/target/classes/connection/HibernateUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/target/classes/dao/ArticleDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/target/classes/dao/ContainerDAO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/target/classes/dao/ContainerDAOImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/target/classes/entities/Article.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/target/classes/entities/Container.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/target/classes/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/target/classes/GUIComponentsScan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/target/classes/META-INF/gui.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/target/classes/components/ArticlesTable$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/target/classes/components/ArticlesTable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/target/classes/components/MainFrame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/target/classes/components/TreeItemList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+    <list default="true" id="5612223e-8709-4494-9454-806f510e84e3" name="Default Changelist" comment="Created possibility to create update and delete containers.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/BackendComponentsScan.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/BackendComponentsScan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/barcode/BarcodeGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/src/main/java/entities/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/entities/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gui/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/CreateContainerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main/java/components/UserReadableInfoSetFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main/java/components/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/container/ContainersHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/location/LocationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/container/ContainersToTreeLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/location/LocationToTreeLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/container/Deleter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/location/Deleter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/container/Saver.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/location/Saver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/container/UserReadableInfoUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/location/UserReadableInfoUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/main/java/connection/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/connection/HibernateUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/dao/LocationDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/dao/LocationDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/main/java/entities/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/entities/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/main/java/entities/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/java/entities/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/database/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java" beforeDir="false" afterPath="$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/src/main/java/components/WatermarkedTextField.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -95,54 +83,91 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
+            <state relative-caret-position="191">
+              <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123_ID45.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/Wypredaż tescoma_ID46.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/location/LocationHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/src/main/java/dao/LocationDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#0#23#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/src/main/java/entities/Article.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/src/main/java/entities/Location.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/location/Deleter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#795#796#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+            <state relative-caret-position="136">
+              <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -183,9 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/src/main/java/DatabaseComponentScan.java" />
-        <option value="$PROJECT_DIR$/database/src/main/java/dao/ArticleDAO.java" />
-        <option value="$PROJECT_DIR$/database/pom.xml" />
         <option value="$PROJECT_DIR$/backend/src/main/java/barcode/BarcodeGenerator.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/barcode/images/FixBarcode.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -231,9 +253,12 @@
         <option value="$PROJECT_DIR$/gui/src/main/java/components/UserReadableInfoSetFrame.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/container/UserReadableInfoUpdater.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/container/Saver.java" />
+        <option value="$PROJECT_DIR$/database/src/main/java/dao/LocationDAOImpl.java" />
+        <option value="$PROJECT_DIR$/database/src/main/java/entities/Location.java" />
         <option value="$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/location/LocationHandler.java" />
       </list>
     </option>
   </component>
@@ -335,120 +360,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="container" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="connection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="articles place" type="b2602c69:ProjectViewProjectNode" />
-              <item name="articles place" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -604,7 +515,7 @@
       <workItem from="1653116645471" duration="5851000" />
       <workItem from="1653209426915" duration="9816000" />
       <workItem from="1653244046826" duration="3002000" />
-      <workItem from="1653279896023" duration="355000" />
+      <workItem from="1653279896023" duration="1146000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed poms. The project builds successfully.">
       <created>1648757636642</created>
@@ -718,7 +629,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653280259284</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Update autogenerated files">
+      <created>1653280332596</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653280332596</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Created possibility to create update and delete containers.">
+      <created>1653280571933</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1653280571933</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -754,12 +679,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156774000" />
+    <option name="totallyTimeSpent" value="157565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23903178" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23903178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -891,16 +817,10 @@
     <MESSAGE value="Created dialog for generating barcode" />
     <MESSAGE value="Created possibility to generate barcode (without saving in db)" />
     <MESSAGE value="Update autogenerated files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update autogenerated files" />
+    <MESSAGE value="Created possibility to create update and delete containers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created possibility to create update and delete containers." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gui/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/TreeNodeWithID.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -942,17 +862,6 @@
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/WYPRZEDSŻ_ID1.png" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/tree_ID3.png" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/rwrwrrw_ID4.png" />
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/Deleter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#943#944#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -968,7 +877,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/12313_ID35.png" />
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersToTreeLoader.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/location/LocationToTreeLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
@@ -978,35 +887,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/src/main/java/entities/Container.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#977#978#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/src/main/java/dao/ContainerDAO.java">
+    <entry file="file://$PROJECT_DIR$/database/src/main/java/dao/LocationDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/src/main/java/dao/ContainerDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#0#23#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1039,13 +925,6 @@
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/Test_ID44.png" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/name_ID44.png" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/78_ID44.png" />
-    <entry file="das://59072847-b326-404b-b308-2457ec985688/database/ARTICLES/schema/PUBLIC/table/CONTAINER">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://59072847-b326-404b-b308-2457ec985688/database/ARTICLES/schema/PUBLIC/table/ARTICLE">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1053,7 +932,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/Saver.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/location/Saver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
@@ -1063,20 +942,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/UserReadableInfoUpdater.java">
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/location/UserReadableInfoUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="44" column="21" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1123,30 +992,10 @@
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/12345678910_ID15.png" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123456789111315_ID15.png" />
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/barcode/images/123456789111314wef eger gwerg rth wrth egqrg qegqwef qwef_ID15.png" />
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="29" column="96" selection-start-line="29" selection-start-column="96" selection-end-line="29" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/container/ContainersHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1169,10 +1018,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/src/main/java/dao/LocationDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#23#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/src/main/java/entities/Location.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/src/main/java/entities/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/location/Deleter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#795#796#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/src/main/java/components/TreeItemList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/BarcodeHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        <state relative-caret-position="136">
+          <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/utils/ImageHandlerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://59072847-b326-404b-b308-2457ec985688/database/ARTICLES/schema/PUBLIC/table/CONTAINER">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/location/LocationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

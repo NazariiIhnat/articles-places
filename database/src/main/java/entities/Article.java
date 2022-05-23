@@ -13,6 +13,6 @@ public class Article {
     private String code;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "container_id")
-    private Container container;
+    private Location location;
 }
 

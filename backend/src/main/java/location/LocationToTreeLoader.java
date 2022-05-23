@@ -1,42 +1,42 @@
-package container;
+package location;
 
 import components.MainFrame;
 import components.TreeItemList;
 import components.TreeNodeWithID;
-import dao.ContainerDAO;
-import entities.Container;
+import dao.LocationDAO;
+import entities.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class ContainersToTreeLoader {
+public class LocationToTreeLoader {
 
-    private List<Container> list;
+    private List<Location> list;
 
     @Autowired
-    public ContainersToTreeLoader(MainFrame mainFrame, ContainerDAO containerDAO) {
+    public LocationToTreeLoader(MainFrame mainFrame, LocationDAO locationDAO) {
         TreeItemList tree = mainFrame.getTreeItemList();
-        list = containerDAO.getAll();
+        list = locationDAO.getAll();
         populateTree(getRoots(), tree.getRootNode());
     }
 
-    private void populateTree(List<Container> list, TreeNodeWithID rootNode) {
+    private void populateTree(List<Location> list, TreeNodeWithID rootNode) {
         if(list != null) {
             list.forEach(container -> {
                 TreeNodeWithID node = new TreeNodeWithID(container.getId(), container.getUserReadableInfo());
                 rootNode.add(node);
-                if(container.hasChildContainer())
-                    populateTree(container.getChildContainers(), node);
+                if(container.hasChildLocation())
+                    populateTree(container.getChildLocations(), node);
             });
         }
     }
 
-    private List<Container> getRoots() {
+    private List<Location> getRoots() {
         return list
                 .stream()
-                .filter(x -> x.getParentContainer() == null)
+                .filter(x -> x.getParentLocation() == null)
                 .collect(Collectors.toList());
     }
 }

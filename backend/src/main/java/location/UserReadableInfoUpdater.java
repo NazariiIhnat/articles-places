@@ -1,11 +1,10 @@
-package container;
+package location;
 
 
 import components.MainFrame;
-import components.TreeItemList;
 import components.UserReadableInfoSetFrame;
-import dao.ContainerDAO;
-import entities.Container;
+import dao.LocationDAO;
+import entities.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import utils.ImageHandler;
@@ -14,31 +13,31 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 @Component
-public class UserReadableInfoUpdater extends ContainersHandler implements ActionListener {
+public class UserReadableInfoUpdater extends LocationHandler implements ActionListener {
 
     private UserReadableInfoSetFrame userReadableInfoSetFrame;
 
     @Autowired
-    public UserReadableInfoUpdater(MainFrame mainFrame, ImageHandler imageHandler, ContainerDAO containerDAO) {
-        super(mainFrame.getTreeItemList(), imageHandler, containerDAO);
+    public UserReadableInfoUpdater(MainFrame mainFrame, ImageHandler imageHandler, LocationDAO locationDAO) {
+        super(mainFrame.getTreeItemList(), imageHandler, locationDAO);
         this.userReadableInfoSetFrame = new UserReadableInfoSetFrame(mainFrame);
         mainFrame
                 .getTreeItemList()
                 .getPopupMenu()
-                .getUpdateContainerMenuItem()
+                .getUpdateLocationMenuItem()
                 .addActionListener(x -> {
                     this.userReadableInfoSetFrame.setVisible(true);
-                    userReadableInfoSetFrame.getTextField().setText(super.getSelectedContainer().getUserReadableInfo());
+                    userReadableInfoSetFrame.getTextField().setText(super.getSelectedLocation().getUserReadableInfo());
                 });
         userReadableInfoSetFrame.getOkBtn().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Container container = getSelectedContainer();
+        Location location = getSelectedLocation();
         String text = userReadableInfoSetFrame.getTextField().getText();
-        container.setUserReadableInfo(text);
-        super.update(container);
+        location.setUserReadableInfo(text);
+        super.update(location);
         userReadableInfoSetFrame.setVisible(false);
     }
 }

@@ -6,8 +6,6 @@ import javax.swing.*;
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
 import javax.swing.tree.TreePath;
-import java.awt.*;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -40,22 +38,22 @@ public class TreeItemList extends JTree {
             public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
                 if(getSelectionModel().getSelectionPath() != null) {
                     if(customModel.getSelectedNode().isRoot()) {
-                        popupMenu.getUpdateContainerMenuItem().setEnabled(false);
-                        popupMenu.getDeleteContainerMenuItem().setEnabled(false);
+                        popupMenu.getUpdateLocationMenuItem().setEnabled(false);
+                        popupMenu.getDeleteLocationMenuItem().setEnabled(false);
                     }
                 }
             }
 
             @Override
             public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-                popupMenu.getUpdateContainerMenuItem().setEnabled(true);
-                popupMenu.getDeleteContainerMenuItem().setEnabled(true);
+                popupMenu.getUpdateLocationMenuItem().setEnabled(true);
+                popupMenu.getDeleteLocationMenuItem().setEnabled(true);
             }
 
             @Override
             public void popupMenuCanceled(PopupMenuEvent e) {
-                popupMenu.getUpdateContainerMenuItem().setEnabled(true);
-                popupMenu.getDeleteContainerMenuItem().setEnabled(true);
+                popupMenu.getUpdateLocationMenuItem().setEnabled(true);
+                popupMenu.getDeleteLocationMenuItem().setEnabled(true);
             }
         };
     }
@@ -79,22 +77,22 @@ public class TreeItemList extends JTree {
     @Getter
     public class PopupMenu extends JPopupMenu {
         private JMenu addMenu;
-        private JMenuItem addContainerMenuItem;
+        private JMenuItem addLocationMenuItem;
         private JMenuItem addArticleMenuItem;
-        private JMenuItem updateContainerMenuItem;
-        private JMenuItem deleteContainerMenuItem;
+        private JMenuItem updateLocationMenuItem;
+        private JMenuItem deleteLocationMenuItem;
 
         PopupMenu() {
             addMenu = new JMenu("Dodaj");
-            addContainerMenuItem = new JMenuItem("Lokacje");
+            addLocationMenuItem = new JMenuItem("Lokacje");
             addArticleMenuItem = new JMenuItem("Artykuł");
-            updateContainerMenuItem = new JMenuItem("Zaktualizuj");
-            deleteContainerMenuItem = new JMenuItem("Usuń");
-            addMenu.add(addContainerMenuItem);
+            updateLocationMenuItem = new JMenuItem("Zaktualizuj");
+            deleteLocationMenuItem = new JMenuItem("Usuń");
+            addMenu.add(addLocationMenuItem);
             addMenu.add(addArticleMenuItem);
             add(addMenu);
-            add(updateContainerMenuItem);
-            add(deleteContainerMenuItem);
+            add(updateLocationMenuItem);
+            add(deleteLocationMenuItem);
         }
     }
 }

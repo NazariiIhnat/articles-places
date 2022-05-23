@@ -1,18 +1,18 @@
 package utils;
-import entities.Container;
+import entities.Location;
 import net.sourceforge.barbecue.*;
 import net.sourceforge.barbecue.output.OutputException;
 import java.awt.image.BufferedImage;
 
 public class BarcodeHandler {
 
-    public static BufferedImage createBarcodeImageFromContainer(Container container) {
+    public static BufferedImage createBarcodeImageFromLocation(Location location) {
         Barcode barcode;
         BufferedImage image = null;
         try {
-            barcode = BarcodeFactory.createCode128(String.valueOf(container.getId()));
-            barcode.setLabel(container.getUserReadableInfo().toUpperCase());
-            barcode.setBarWidth(calculateBarcodeWidth(container.getUserReadableInfo()));
+            barcode = BarcodeFactory.createCode128(String.valueOf(location.getId()));
+            barcode.setLabel(location.getUserReadableInfo().toUpperCase());
+            barcode.setBarWidth(calculateBarcodeWidth(location.getUserReadableInfo()));
             image = BarcodeImageHandler.getImage(barcode);
         } catch (BarcodeException | OutputException e) {
             e.printStackTrace();

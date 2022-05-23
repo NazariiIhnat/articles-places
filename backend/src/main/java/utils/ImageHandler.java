@@ -1,12 +1,12 @@
 package utils;
 
-import entities.Container;
+import entities.Location;
 
 import java.awt.image.BufferedImage;
 
 public interface ImageHandler {
-    void save(Container container);
-    void update(Container container);
-    BufferedImage get(Container container);
-    void delete(Container container);
+    void save(Location location);
+    void update(Location location);
+    BufferedImage get(Location location);
+    void delete(Location location);
 }

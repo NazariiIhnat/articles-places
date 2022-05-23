@@ -1,6 +1,6 @@
 package utils;
 
-import entities.Container;
+import entities.Location;
 import org.springframework.stereotype.Component;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -14,9 +14,9 @@ public class ImageHandlerImpl implements ImageHandler {
     private final String imagesRootFolder = "backend/src/main/java/barcode/images/";
 
     @Override
-    public void save(Container container) {
-        BufferedImage image = BarcodeHandler.createBarcodeImageFromContainer(container);
-        File file = new File(imagesRootFolder + getFilename(container));
+    public void save(Location location) {
+        BufferedImage image = BarcodeHandler.createBarcodeImageFromLocation(location);
+        File file = new File(imagesRootFolder + getFilename(location));
         try {
             ImageIO.write(image, "png", file);
         } catch (IOException e) {
@@ -25,37 +25,37 @@ public class ImageHandlerImpl implements ImageHandler {
     }
 
     public static void main(String[] args) {
-        Container container = new Container();
-        container.setId(15);
-        container.setUserReadableInfo("123456789111314wef eger gwerg rth wrth egqrg qegqwef qwef");
+        Location location = new Location();
+        location.setId(15);
+        location.setUserReadableInfo("123456789111314wef eger gwerg rth wrth egqrg qegqwef qwef");
         ImageHandler handler = new ImageHandlerImpl();
-        handler.save(container);
+        handler.save(location);
     }
 
-    private String getFilename(Container container) {
-        return container.getUserReadableInfo() + "_ID" + container.getId() + ".png";
+    private String getFilename(Location location) {
+        return location.getUserReadableInfo() + "_ID" + location.getId() + ".png";
     }
 
     @Override
-    public void update(Container container) {
-        String filepathToDelete = getFilenameByContainerID(container);
+    public void update(Location location) {
+        String filepathToDelete = getFilenameByLocationID(location);
         File file = new File(imagesRootFolder + filepathToDelete);
         file.delete();
-        save(container);
+        save(location);
     }
 
-    private String getFilenameByContainerID(Container container) {
+    private String getFilenameByLocationID(Location location) {
         File file = new File(imagesRootFolder);
         File[] files = file
-                .listFiles(pathname -> pathname.getName().split("_ID")[1].equals(container.getId() + ".png"));
+                .listFiles(pathname -> pathname.getName().split("_ID")[1].equals(location.getId() + ".png"));
         System.out.println("qdqwdqwd" + files.length);
         return files[0].getName();
     }
 
     @Override
-    public BufferedImage get(Container container) {
+    public BufferedImage get(Location location) {
         try {
-            return ImageIO.read(new URL(imagesRootFolder + getFilename(container)));
+            return ImageIO.read(new URL(imagesRootFolder + getFilename(location)));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -63,8 +63,8 @@ public class ImageHandlerImpl implements ImageHandler {
     }
 
     @Override
-    public void delete(Container container) {
-        File file = new File(imagesRootFolder + getFilename(container));
+    public void delete(Location location) {
+        File file = new File(imagesRootFolder + getFilename(location));
         file.delete();
     }
 }

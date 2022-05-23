@@ -1,7 +1,7 @@
 package dao;
 
 import connection.HibernateUtil;
-import entities.Container;
+import entities.Location;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,16 +10,16 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class ContainerDAOImpl implements ContainerDAO{
+public class LocationDAOImpl implements LocationDAO {
 
     private SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
     @Override
-    public void save(Container container) {
+    public void save(Location location) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            session.save(container);
+            session.save(location);
             transaction.commit();
         } catch (Exception e) {
             if(transaction != null)
@@ -28,18 +28,18 @@ public class ContainerDAOImpl implements ContainerDAO{
     }
 
     @Override
-    public Container get(long id) {
+    public Location get(long id) {
         try(Session session = sessionFactory.openSession()){
-            return session.get(Container.class, id);
+            return session.get(Location.class, id);
         } catch (Exception e) {
             return null;
         }
     }
 
     @Override
-    public List<Container> getAll() {
+    public List<Location> getAll() {
         try(Session session = sessionFactory.openSession()){
-            Query<Container> query = session.createQuery("from entities.Container", Container.class);
+            Query<Location> query = session.createQuery("from entities.Location", Location.class);
             return query.list();
         } catch (Exception e) {
             return null;
@@ -47,11 +47,11 @@ public class ContainerDAOImpl implements ContainerDAO{
     }
 
     @Override
-    public void update(Container container) {
+    public void update(Location location) {
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
-            session.update(container);
+            session.update(location);
             transaction.commit();
         } catch (Exception e) {
             if(transaction != null)
@@ -64,9 +64,9 @@ public class ContainerDAOImpl implements ContainerDAO{
         Transaction transaction = null;
         try(Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            Container container = get(id);
-            if(container != null)
-                session.delete(container);
+            Location location = get(id);
+            if(location != null)
+                session.delete(location);
             transaction.commit();
         } catch (Exception e) {
             if(transaction != null)

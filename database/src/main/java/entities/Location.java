@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Container {
+public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,29 +17,29 @@ public class Container {
 
     @ManyToOne
     @JoinColumn(name = "parent_id")
-    private Container parentContainer;
+    private Location parentLocation;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "parent_id")
-    private List<Container> childContainers = new ArrayList<>();
+    private List<Location> childLocations = new ArrayList<>();
 
-    @OneToMany(mappedBy = "container", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
     private List<Article> articles = new ArrayList<>();
 
-    public void addCildContainer(Container container) {
-        childContainers.add(container);
+    public void addCildLocation(Location location) {
+        childLocations.add(location);
     }
 
     public void addArticle(Article article) {
         articles.add(article);
     }
 
-    public boolean hasChildContainer() {
-        return this.childContainers != null;
+    public boolean hasChildLocation() {
+        return this.childLocations != null;
     }
 
-    public boolean hasParentContainer() {
-        return this.parentContainer != null;
+    public boolean hasParentLocation() {
+        return this.parentLocation != null;
     }
 
     @Override
