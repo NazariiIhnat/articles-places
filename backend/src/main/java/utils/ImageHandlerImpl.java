@@ -24,14 +24,6 @@ public class ImageHandlerImpl implements ImageHandler {
         }
     }
 
-    public static void main(String[] args) {
-        Location location = new Location();
-        location.setId(15);
-        location.setUserReadableInfo("123456789111314wef eger gwerg rth wrth egqrg qegqwef qwef");
-        ImageHandler handler = new ImageHandlerImpl();
-        handler.save(location);
-    }
-
     private String getFilename(Location location) {
         return location.getUserReadableInfo() + "_ID" + location.getId() + ".png";
     }
