@@ -1,33 +1,17 @@
 package components;
 
 import lombok.Getter;
-import org.springframework.stereotype.Component;
-
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 
-@Component
 @Getter
 public class ArticlesTable extends JTable {
 
     private JScrollPane scrollPane;
+    private TableModel customModel;
 
     public ArticlesTable() {
+        this.customModel = new CustomTableModel(this);
         scrollPane = new JScrollPane();
-        setModel(new DefaultTableModel(
-                new Object[][] {
-                },
-                new String[] {
-                        "\u2116", "Artyku\u0142", "Ilo\u015B\u0107"
-                }
-        ) {
-            boolean[] columnEditables = new boolean[] {
-                    false, false, false
-            };
-            public boolean isCellEditable(int row, int column) {
-                return columnEditables[column];
-            }
-        });
         getColumnModel().getColumn(0).setResizable(false);
         getColumnModel().getColumn(0).setPreferredWidth(30);
         getColumnModel().getColumn(0).setMinWidth(30);
@@ -42,5 +26,4 @@ public class ArticlesTable extends JTable {
         getColumnModel().getColumn(2).setMaxWidth(36);
         scrollPane.setViewportView(this);
     }
-
 }
