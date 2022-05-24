@@ -16,6 +16,6 @@
         <property name="hibernate.connection.useUnicode">true</property>
         <property name="hibernate.connection.pool_size">10</property>
         <mapping class="entities.Article"/>
-        <mapping class="entities.Container"/>
+        <mapping class="entities.Location"/>
     </session-factory>
 </hibernate-configuration>
