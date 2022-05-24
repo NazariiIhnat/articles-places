@@ -23,23 +23,23 @@ public class LocationHandler {
         locationDAO.save(location);
         imageHandler.save(location);
         TreeNodeWithID node = new TreeNodeWithID(location.getId(), location.getUserReadableInfo());
-        tree.getCustomModel().addNode(node);
+        tree.getCustomTreeModel().addNode(node);
     }
 
     public Location getSelectedLocation() {
-        long id = tree.getCustomModel().getSelectedNode().getId();
+        long id = tree.getCustomTreeModel().getSelectedNode().getId();
         return locationDAO.get(id);
     }
 
     public void update(Location newValue) {
         locationDAO.update(newValue);
         imageHandler.update(newValue);
-        tree.getCustomModel().updateNode(newValue.getUserReadableInfo());
+        tree.getCustomTreeModel().updateNode(newValue.getUserReadableInfo());
     }
 
     public void delete(long id) {
         imageHandler.delete(locationDAO.get(id));
         locationDAO.delete(id);
-        tree.getCustomModel().deleteSelectedNode();
+        tree.getCustomTreeModel().deleteSelectedNode();
     }
 }

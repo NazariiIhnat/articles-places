@@ -3,7 +3,7 @@ package components;
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
 
-public class CustomTreeModel extends DefaultTreeModel implements Model{
+public class CustomTreeModel extends DefaultTreeModel implements TreeModel {
 
     private JTree tree;
 

@@ -15,11 +15,11 @@ public class TreeItemList extends JTree {
     private TreeNodeWithID rootNode;
     private JScrollPane scrollPane;
     private PopupMenu popupMenu;
-    private Model customModel;
+    private TreeModel customTreeModel;
 
     public TreeItemList() {
         rootNode = new TreeNodeWithID(0, "nakrywamy");
-        customModel = new CustomTreeModel(rootNode, this);
+        customTreeModel = new CustomTreeModel(rootNode, this);
         scrollPane = new JScrollPane();
         scrollPane.setViewportView(this);
         addMouseListener(selectItemByRMB());
@@ -37,7 +37,7 @@ public class TreeItemList extends JTree {
             @Override
             public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
                 if(getSelectionModel().getSelectionPath() != null) {
-                    if(customModel.getSelectedNode().isRoot()) {
+                    if(customTreeModel.getSelectedNode().isRoot()) {
                         popupMenu.getUpdateLocationMenuItem().setEnabled(false);
                         popupMenu.getDeleteLocationMenuItem().setEnabled(false);
                     }

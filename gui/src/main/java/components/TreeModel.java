@@ -1,6 +1,6 @@
 package components;
 
-public interface Model {
+public interface TreeModel {
 
     void addNode(TreeNodeWithID node);
     TreeNodeWithID getSelectedNode();
