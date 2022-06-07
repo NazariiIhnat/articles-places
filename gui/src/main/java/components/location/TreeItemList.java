@@ -1,4 +1,4 @@
-package components;
+package components.location;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -16,10 +16,12 @@ public class TreeItemList extends JTree {
     private JScrollPane scrollPane;
     private PopupMenu popupMenu;
     private TreeModel customTreeModel;
+    private NavigableTreeModel navigableTreeModel;
 
     public TreeItemList() {
         rootNode = new TreeNodeWithID(0, "nakrywamy");
         customTreeModel = new CustomTreeModel(rootNode, this);
+        navigableTreeModel = new CustomNavigableTreeModel(rootNode, this);
         scrollPane = new JScrollPane();
         scrollPane.setViewportView(this);
         addMouseListener(selectItemByRMB());
@@ -85,7 +87,7 @@ public class TreeItemList extends JTree {
         PopupMenu() {
             addMenu = new JMenu("Dodaj");
             addLocationMenuItem = new JMenuItem("Lokacje");
-            addArticleMenuItem = new JMenuItem("Artykuł");
+            addArticleMenuItem = new JMenuItem("Towr");
             updateLocationMenuItem = new JMenuItem("Zaktualizuj");
             deleteLocationMenuItem = new JMenuItem("Usuń");
             addMenu.add(addLocationMenuItem);

@@ -1,12 +1,15 @@
 package components;
 
-import components.article.ArticlesTable;
+import components.items.ItemsTable;
 import components.location.TreeItemList;
+import entities.Article;
 import lombok.AccessLevel;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 @Component
 @Getter
@@ -17,22 +20,17 @@ public class MainFrame extends JFrame {
     private TreeItemList treeItemList;
     private JTextField searchLocationTextFiled;
     private JTextField searchItemTextField;
-    private ArticlesTable articlesTable;
+    private ItemsTable itemsTable;
 
     public MainFrame() {
         this.treeItemList = new TreeItemList();
-        this.articlesTable = new ArticlesTable();
+        this.itemsTable = new ItemsTable();
         initMainFrame();
         initMenu();
         initSearchLocationTextField();
         initSearchItemTextField();
         initTreeItemList();
         initArticlesTable();
-    }
-
-    public static void main(String[] args) {
-        MainFrame frame = new MainFrame();
-        frame.setVisible(true);
     }
 
     private void initMainFrame() {
@@ -68,32 +66,23 @@ public class MainFrame extends JFrame {
     }
 
     private void initArticlesTable() {
-        articlesTable.getScrollPane().setBounds(181, 61, 204, 239);
-        contentPane.add(articlesTable.getScrollPane());
+        itemsTable.getScrollPane().setBounds(181, 61, 204, 239);
+        contentPane.add(itemsTable.getScrollPane());
     }
 
     @Getter
     public class Menu extends JMenuBar{
         @Getter(AccessLevel.PACKAGE)
-        private JMenu itemsMenu;
-        private JMenuItem addItemToLocationMenuItem;
-        private JMenuItem removeItemFromLocationMenuItem;
         private JMenuItem findItemMenuITem;
         @Getter(AccessLevel.PACKAGE)
         private JMenu optionsMenu;
         private JMenuItem openFolderWithBarcodesMenuItem;
 
         Menu() {
-            this.itemsMenu = new JMenu("Towar");
-            add(itemsMenu);
-            this.addItemToLocationMenuItem = new JMenuItem("Dodaj do lokacji");
-            itemsMenu.add(addItemToLocationMenuItem);
-            this.removeItemFromLocationMenuItem = new JMenuItem("Wyjmij z lokacji");
-            itemsMenu.add(removeItemFromLocationMenuItem);
-            this.findItemMenuITem = new JMenuItem("Znajdż");
-            itemsMenu.add(findItemMenuITem);
             this.optionsMenu = new JMenu("Opcje");
             add(optionsMenu);
+            this.findItemMenuITem = new JMenuItem("Znajdż towar");
+            optionsMenu.add(findItemMenuITem);
             this.openFolderWithBarcodesMenuItem = new JMenuItem("Otwórz folder z kodami lokacji");
             optionsMenu.add(openFolderWithBarcodesMenuItem);
         }

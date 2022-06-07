@@ -1,4 +1,4 @@
-package components;
+package components.location;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,8 +1,8 @@
 package location;
 
 import components.MainFrame;
-import components.TreeItemList;
-import components.TreeNodeWithID;
+import components.location.TreeItemList;
+import components.location.TreeNodeWithID;
 import dao.LocationDAO;
 import entities.Location;
 import org.springframework.beans.factory.annotation.Autowired;

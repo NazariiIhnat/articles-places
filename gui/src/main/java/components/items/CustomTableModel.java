@@ -1,4 +1,4 @@
-package components;
+package components.items;
 
 import entities.Article;
 
@@ -7,32 +7,44 @@ import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomTableModel implements TableModel{
+public class CustomTableModel extends DefaultTableModel implements TableModel {
 
     private JTable table;
     private List<Article> articles;
+    private boolean[] columnsEditable;
+    private static final String[] columnsName = {"\u2116", "Artyku\u0142", "Ilo\u015B\u0107"};
 
     public CustomTableModel(JTable table){
-        this.table = table;
-        this.articles = new ArrayList<>();
-        initTableModel();
+        this(table, new boolean[]{false, false, false});
     }
 
-    private void initTableModel() {
-        this.table.setModel(new DefaultTableModel(
-                new Object[][] {
-                },
-                new String[] {
-                        "\u2116", "Artyku\u0142", "Ilo\u015B\u0107"
-                }
-        ) {
-            boolean[] columnEditables = new boolean[] {
-                    false, false, false
-            };
-            public boolean isCellEditable(int row, int column) {
-                return columnEditables[column];
-            }
-        });
+    public CustomTableModel(JTable table, boolean[] columnsEditable) {
+        super(new Object[][]{}, columnsName);
+        this.table = table;
+        this.articles = new ArrayList<>();
+        this.columnsEditable = columnsEditable;
+        table.setModel(this);
+        initColumnsSize();
+    }
+
+    @Override
+    public boolean isCellEditable(int row, int column){
+        return columnsEditable[column];
+    }
+
+    private void initColumnsSize() {
+        table.getColumnModel().getColumn(0).setResizable(false);
+        table.getColumnModel().getColumn(0).setPreferredWidth(30);
+        table.getColumnModel().getColumn(0).setMinWidth(30);
+        table.getColumnModel().getColumn(0).setMaxWidth(30);
+        table.getColumnModel().getColumn(1).setResizable(false);
+        table.getColumnModel().getColumn(1).setPreferredWidth(136);
+        table.getColumnModel().getColumn(1).setMinWidth(136);
+        table.getColumnModel().getColumn(1).setMaxWidth(136);
+        table.getColumnModel().getColumn(2).setResizable(false);
+        table.getColumnModel().getColumn(2).setPreferredWidth(51);
+        table.getColumnModel().getColumn(2).setMinWidth(51);
+        table.getColumnModel().getColumn(2).setMaxWidth(51);
     }
 
 

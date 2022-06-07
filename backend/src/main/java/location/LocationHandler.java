@@ -1,7 +1,7 @@
 package location;
 
-import components.TreeItemList;
-import components.TreeNodeWithID;
+import components.location.TreeItemList;
+import components.location.TreeNodeWithID;
 import dao.LocationDAO;
 import entities.Location;
 import utils.ImageHandler;

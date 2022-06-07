@@ -1,4 +1,4 @@
-package components;
+package components.location;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
