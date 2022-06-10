@@ -17,7 +17,6 @@ public class ItemHandleTableModel extends CustomTableModel {
         table.setRowSelectionAllowed(true);
         table.setColumnSelectionAllowed(true);
         addRow(1);
-        addRow(2);
         createChangeSelectionBindings();
         table.changeSelection(0, 1, false, false);
         table.editCellAt(0, 1);
@@ -35,24 +34,24 @@ public class ItemHandleTableModel extends CustomTableModel {
         table.getActionMap().put("Enter", new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                if(isEmptyCodeCell() | isEmptyQuantityCell()){
-                    if (table.getSelectedColumn() == 1) {
-                        selectQuantityColumn();
+                table.editCellAt(0, 0);
+                    if(isEmptyCodeCell() | isEmptyQuantityCell()){
+                        changeSelectionBetweenCodeAndQuantityColumnInSameRow();
                     } else {
-                        selectCodeColumn();
+                        if(!isSelectedLastRow()) {
+                            if(isEmptyLastRowNumberOrQuantityColumns()){
+                               table.changeSelection(table.getRowCount()-1, 1, false, false);
+                            } else {
+                                addRow(getRowCount());
+                                table.changeSelection(getRowCount()-1, 1, false, false);
+                                table.editCellAt(table.getSelectedRow(), 1);
+                            }
+                        } else {
+                            addRow(getRowCount());
+                            table.changeSelection(getRowCount() - 1, 1, false, false);
+                            table.editCellAt(table.getSelectedRow(), 1);
+                        }
                     }
-                }
-                if(!isEmptyQuantityCell() && !isEmptyCodeCell()) {
-                    if(table.getSelectedRow() < getRowCount()-2){
-                        table.changeSelection(getRowCount()-2, 1, false, false);
-                        table.editCellAt(table.getSelectedRow(), 1);
-                    }
-                    else if(table.getSelectedRow() == getRowCount()-2) {
-                        addRow(getRowCount() + 1);
-                        table.changeSelection(table.getSelectedRow() + 1, 1, false, false);
-                        table.editCellAt(table.getSelectedRow(), 1);
-                    }
-                }
             }
         });
     }
@@ -67,6 +66,13 @@ public class ItemHandleTableModel extends CustomTableModel {
         return val == null || val.toString().trim().equals("");
     }
 
+    private void changeSelectionBetweenCodeAndQuantityColumnInSameRow() {
+        if (table.getSelectedColumn() == 1)
+            selectQuantityColumn();
+        else
+            selectCodeColumn();
+    }
+
     private void selectCodeColumn() {
         table.changeSelection(table.getSelectedRow(), 1, false, false);
         table.editCellAt(table.getSelectedRow(), 1);
@@ -75,5 +81,15 @@ public class ItemHandleTableModel extends CustomTableModel {
     private void selectQuantityColumn() {
         table.changeSelection(table.getSelectedRow(), 2, false, false);
         table.editCellAt(table.getSelectedRow(), 2);
+    }
+
+    private boolean isSelectedLastRow() {
+        return getRowCount()-1 == table.getSelectedRow();
+    }
+
+    private boolean isEmptyLastRowNumberOrQuantityColumns() {
+        String codeVal = (String) getValueAt(table.getRowCount()-1, 1);
+        String quantityVal = (String) getValueAt(table.getRowCount()-1, 2);
+        return codeVal == null || codeVal.trim().equals("") || quantityVal == null || quantityVal.trim().equals("");
     }
 }
