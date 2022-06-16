@@ -1,12 +1,12 @@
-package articles;
+package item;
 
 import components.MainFrame;
 import components.items.handle.ItemHandleDialog;
 import components.location.ShowMessage;
 import components.location.TreeNodeWithID;
-import dao.ArticleDAO;
+import dao.ItemsDAO;
 import dao.LocationDAO;
-import entities.Article;
+import entities.Item;
 import entities.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,20 +14,20 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("articleSaver")
-public class Saver {
+@Component
+public class ItemSaver {
 
     private MainFrame mainFrame;
-    private ArticleDAO articleDAO;
+    private ItemsDAO itemsDAO;
     private LocationDAO locationDAO;
     private ItemHandleDialog dialog;
 
     @Autowired
-    public Saver(MainFrame mainFrame, ArticleDAO articleDAO, LocationDAO locationDAO) {
+    public ItemSaver(MainFrame mainFrame, ItemsDAO itemsDAO, LocationDAO locationDAO) {
         this.mainFrame = mainFrame;
-        this.articleDAO = articleDAO;
+        this.itemsDAO = itemsDAO;
         this.locationDAO = locationDAO;
-        mainFrame.getTreeItemList().getPopupMenu().getAddArticleMenuItem().addActionListener(showItemHandleDialog());
+        mainFrame.getTreeItemList().getPopupMenu().getAddItemMenuItem().addActionListener(showItemHandleDialog());
         dialog = new ItemHandleDialog(mainFrame);
         dialog.getOkButton().addActionListener(saveItems());
     }
@@ -38,7 +38,7 @@ public class Saver {
 
     private ActionListener saveItems() {
         return x -> {
-            List<Article> articles = new ArrayList<>();
+            List<Item> items = new ArrayList<>();
             dialog.getTable().clearSelection();
             dialog.getTable().editCellAt(0, 0);
             if(isCorrectValues()){
@@ -46,15 +46,18 @@ public class Saver {
                 String code = (String) obj[1];
                 int quantity = Integer.parseInt((String) obj[2]);
                 for(int i = 0; i < quantity; i++){
-                    Article article = new Article();
-                    article.setCode(code);
-                    article.setLocation(getSelectedLocation());
-                    articles.add(article);
+                    Item item = new Item();
+                    item.setCode(code);
+                    item.setLocation(getSelectedLocation());
+                    items.add(item);
                 }
                 dialog.setVisible(false);
                 dialog.getTable().getCustomModel().clearData();
                 }
-                articles.forEach(article -> articleDAO.save(article));
+            items.forEach(item -> {
+                itemsDAO.save(item);
+                mainFrame.getItemsTable().getCustomModel().addItem(item);
+            });
             }
         };
     }

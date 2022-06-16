@@ -22,9 +22,4 @@ public class ItemHandleTable extends JTable {
             values[i] = new Object[]{getValueAt(i, 0), getValueAt(i, 1), getValueAt(i, 2)};
         return values;
     }
-
-//    @Override
-//    public Class<?> getColumnClass(int columnIndex) {
-//        return columnIndex == 2 ? Integer.class : super.getColumnClass(columnIndex);
-//    }
 }

@@ -80,18 +80,18 @@ public class TreeItemList extends JTree {
     public class PopupMenu extends JPopupMenu {
         private JMenu addMenu;
         private JMenuItem addLocationMenuItem;
-        private JMenuItem addArticleMenuItem;
+        private JMenuItem addItemMenuItem;
         private JMenuItem updateLocationMenuItem;
         private JMenuItem deleteLocationMenuItem;
 
         PopupMenu() {
             addMenu = new JMenu("Dodaj");
             addLocationMenuItem = new JMenuItem("Lokacje");
-            addArticleMenuItem = new JMenuItem("Towar");
+            addItemMenuItem = new JMenuItem("Towar");
             updateLocationMenuItem = new JMenuItem("Zaktualizuj");
             deleteLocationMenuItem = new JMenuItem("Usuń");
             addMenu.add(addLocationMenuItem);
-            addMenu.add(addArticleMenuItem);
+            addMenu.add(addItemMenuItem);
             add(addMenu);
             add(updateLocationMenuItem);
             add(deleteLocationMenuItem);

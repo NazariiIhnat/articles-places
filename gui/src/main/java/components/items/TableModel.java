@@ -1,12 +1,12 @@
 package components.items;
 
-import entities.Article;
+import entities.Item;
 
 import java.util.List;
 
 public interface TableModel {
-    void addArticle(Article article);
-    void addAll(List<Article> articles);
-    void set(List<Article> articles);
+    void addItem(Item item);
+    void addAll(List<Item> items);
+    void set(List<Item> items);
     void deleteSelectedRow();
 }

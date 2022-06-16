@@ -11,7 +11,7 @@ public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "container_id")
+    @Column(name = "location_id")
     private long id;
     private String userReadableInfo;
 
@@ -24,14 +24,14 @@ public class Location {
     private List<Location> childLocations = new ArrayList<>();
 
     @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
-    private List<Article> articles = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();
 
     public void addCildLocation(Location location) {
         childLocations.add(location);
     }
 
-    public void addArticle(Article article) {
-        articles.add(article);
+    public void addArticle(Item item) {
+        items.add(item);
     }
 
     public boolean hasChildLocation() {

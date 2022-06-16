@@ -5,14 +5,14 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class Article {
+public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String code;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "container_id")
+    @JoinColumn(name = "location_id")
     private Location location;
 }
 

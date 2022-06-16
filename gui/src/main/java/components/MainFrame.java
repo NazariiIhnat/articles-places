@@ -2,14 +2,11 @@ package components;
 
 import components.items.ItemsTable;
 import components.location.TreeItemList;
-import entities.Article;
 import lombok.AccessLevel;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 @Component
 @Getter
@@ -30,7 +27,7 @@ public class MainFrame extends JFrame {
         initSearchLocationTextField();
         initSearchItemTextField();
         initTreeItemList();
-        initArticlesTable();
+        initItemsTable();
     }
 
     private void initMainFrame() {
@@ -65,7 +62,7 @@ public class MainFrame extends JFrame {
         contentPane.add(treeItemList.getScrollPane());
     }
 
-    private void initArticlesTable() {
+    private void initItemsTable() {
         itemsTable.getScrollPane().setBounds(181, 61, 204, 239);
         contentPane.add(itemsTable.getScrollPane());
     }

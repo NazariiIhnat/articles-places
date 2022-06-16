@@ -1,6 +1,6 @@
 package components.items;
 
-import entities.Article;
+import entities.Item;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -9,66 +9,68 @@ import java.util.List;
 
 public class FromItemToRowModel extends ItemsDefaultTableModel implements TableModel {
 
-    private List<Article> articles;
+    private List<Item> items;
 
     public FromItemToRowModel(JTable table){
         super(table, new boolean[]{false, false, false});
-        this.articles = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     @Override
-    public void addArticle(Article article) {
+    public void addItem(Item item) {
         DefaultTableModel model = (DefaultTableModel) getTable().getModel();
-        if(existInTable(article)) {
-            int row = getRowNumber(article);
+        if(existInTable(item)) {
+            int row = getRowNumber(item);
             int column = 2;
-            int numberOfArticle = (int) model.getValueAt(row, column);
-            model.setValueAt(numberOfArticle + 1, row, column);
+            int numberOfItem = (int) model.getValueAt(row, column);
+            model.setValueAt(numberOfItem + 1, row, column);
             model.fireTableCellUpdated(row, column);
         } else {
             model.addRow(new Object[]{
                     model.getRowCount()+1,
-                    article.getCode(),
+                    item.getCode(),
                     1
             });
-            int row = getRowNumber(article);
+            int row = getRowNumber(item);
             model.fireTableRowsInserted(row, row);
         }
-        this.articles.add(article);
+        this.items.add(item);
     }
 
-    private boolean existInTable(Article article) {
+    private boolean existInTable(Item item) {
         boolean flag = false;
         int rowCount = getTable().getRowCount();
         for(int i = 0; i < rowCount; i++){
-            if(getTable().getValueAt(i, 1).equals(article.getCode()))
+            if(getTable().getValueAt(i, 1).equals(item.getCode())) {
                 flag = true;
-            break;
+                break;
+            }
         }
         return flag;
     }
 
-    private int getRowNumber(Article article) {
+    private int getRowNumber(Item item) {
         int rowNumber = -1;
         for(int i = 0; i < getTable().getRowCount(); i++){
-            if(getTable().getValueAt(i, 1).equals(article.getCode()))
+            if(getTable().getValueAt(i, 1).equals(item.getCode())) {
                 rowNumber = i;
-            break;
+                break;
+            }
         }
         return rowNumber;
     }
 
     @Override
-    public void addAll(List<Article> articles) {
-        articles.forEach(this::addArticle);
+    public void addAll(List<Item> items) {
+        items.forEach(this::addItem);
     }
 
     @Override
-    public void set(List<Article> articles) {
+    public void set(List<Item> items) {
         DefaultTableModel model = (DefaultTableModel) getTable().getModel();
-        this.articles.clear();
+        this.items.clear();
         model.setRowCount(0);
-        addAll(articles);
+        addAll(items);
         model.fireTableDataChanged();
     }
 
@@ -77,13 +79,13 @@ public class FromItemToRowModel extends ItemsDefaultTableModel implements TableM
         DefaultTableModel model = (DefaultTableModel) getTable().getModel();
         int row = getTable().getSelectedRow();
         int column =  2;
-        int numberOfArticle = (int)model.getValueAt(row, column);
-        if(numberOfArticle != 1) {
-            model.setValueAt(numberOfArticle - 1, row, column);
+        int numberOfItem = (int)model.getValueAt(row, column);
+        if(numberOfItem != 1) {
+            model.setValueAt(numberOfItem - 1, row, column);
             model.fireTableCellUpdated(row, column);
         } else {
            model.removeRow(row);
-           this.articles.remove(row);
+           this.items.remove(row);
            model.fireTableRowsDeleted(row, row);
         }
     }

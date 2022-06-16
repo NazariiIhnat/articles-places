@@ -1,6 +1,6 @@
 package connection;
 
-import entities.Article;
+import entities.Item;
 import entities.Location;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,7 +11,7 @@ public class HibernateUtil {
 
     private static SessionFactory buildSessionFactory() {
         Configuration configuration = new Configuration()
-                .addAnnotatedClass(Article.class)
+                .addAnnotatedClass(Item.class)
                 .addAnnotatedClass(Location.class)
                 .configure();
         return configuration.buildSessionFactory();
