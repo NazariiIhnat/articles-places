@@ -1,16 +1,18 @@
 package components.items.handle;
 
 import lombok.Getter;
-
+import org.springframework.stereotype.Component;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 @Getter
+@Component
 public class ItemHandleDialog extends JDialog {
 
     private JPanel contentPanel = new JPanel();
-    private JTable table;
+    private JButton okButton;
+    private ItemHandleTable table;
 
     public ItemHandleDialog(JFrame frame) {
         super(frame);
@@ -32,13 +34,13 @@ public class ItemHandleDialog extends JDialog {
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(10, 11, 219, 239);
         contentPanel.add(scrollPane);
-        table = new JTable();
+        table = new ItemHandleTable();
         scrollPane.setViewportView(table);
     }
 
     private void initOkButton() {
-        JButton btnNewButton = new JButton("OK");
-        btnNewButton.setBounds(10, 261, 219, 23);
-        contentPanel.add(btnNewButton);
+        okButton = new JButton("OK");
+        okButton.setBounds(10, 261, 219, 23);
+        contentPanel.add(okButton);
     }
 }

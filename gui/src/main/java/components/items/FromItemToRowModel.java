@@ -7,50 +7,18 @@ import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomTableModel extends DefaultTableModel implements TableModel {
+public class FromItemToRowModel extends ItemsDefaultTableModel implements TableModel {
 
-    private JTable table;
     private List<Article> articles;
-    private boolean[] columnsEditable;
-    private static final String[] columnsName = {"\u2116", "Artyku\u0142", "Ilo\u015B\u0107"};
 
-    public CustomTableModel(JTable table){
-        this(table, new boolean[]{false, false, false});
-    }
-
-    public CustomTableModel(JTable table, boolean[] columnsEditable) {
-        super(new Object[][]{}, columnsName);
-        this.table = table;
+    public FromItemToRowModel(JTable table){
+        super(table, new boolean[]{false, false, false});
         this.articles = new ArrayList<>();
-        this.columnsEditable = columnsEditable;
-        table.setModel(this);
-        initColumnsSize();
     }
-
-    @Override
-    public boolean isCellEditable(int row, int column){
-        return columnsEditable[column];
-    }
-
-    private void initColumnsSize() {
-        table.getColumnModel().getColumn(0).setResizable(false);
-        table.getColumnModel().getColumn(0).setPreferredWidth(30);
-        table.getColumnModel().getColumn(0).setMinWidth(30);
-        table.getColumnModel().getColumn(0).setMaxWidth(30);
-        table.getColumnModel().getColumn(1).setResizable(false);
-        table.getColumnModel().getColumn(1).setPreferredWidth(136);
-        table.getColumnModel().getColumn(1).setMinWidth(136);
-        table.getColumnModel().getColumn(1).setMaxWidth(136);
-        table.getColumnModel().getColumn(2).setResizable(false);
-        table.getColumnModel().getColumn(2).setPreferredWidth(51);
-        table.getColumnModel().getColumn(2).setMinWidth(51);
-        table.getColumnModel().getColumn(2).setMaxWidth(51);
-    }
-
 
     @Override
     public void addArticle(Article article) {
-        DefaultTableModel model = (DefaultTableModel) this.table.getModel();
+        DefaultTableModel model = (DefaultTableModel) getTable().getModel();
         if(existInTable(article)) {
             int row = getRowNumber(article);
             int column = 2;
@@ -71,9 +39,9 @@ public class CustomTableModel extends DefaultTableModel implements TableModel {
 
     private boolean existInTable(Article article) {
         boolean flag = false;
-        int rowCount = table.getRowCount();
+        int rowCount = getTable().getRowCount();
         for(int i = 0; i < rowCount; i++){
-            if(table.getValueAt(i, 1).equals(article.getCode()))
+            if(getTable().getValueAt(i, 1).equals(article.getCode()))
                 flag = true;
             break;
         }
@@ -82,8 +50,8 @@ public class CustomTableModel extends DefaultTableModel implements TableModel {
 
     private int getRowNumber(Article article) {
         int rowNumber = -1;
-        for(int i = 0; i < table.getRowCount(); i++){
-            if(table.getValueAt(i, 1).equals(article.getCode()))
+        for(int i = 0; i < getTable().getRowCount(); i++){
+            if(getTable().getValueAt(i, 1).equals(article.getCode()))
                 rowNumber = i;
             break;
         }
@@ -97,7 +65,7 @@ public class CustomTableModel extends DefaultTableModel implements TableModel {
 
     @Override
     public void set(List<Article> articles) {
-        DefaultTableModel model = (DefaultTableModel) this.table.getModel();
+        DefaultTableModel model = (DefaultTableModel) getTable().getModel();
         this.articles.clear();
         model.setRowCount(0);
         addAll(articles);
@@ -106,8 +74,8 @@ public class CustomTableModel extends DefaultTableModel implements TableModel {
 
     @Override
     public void deleteSelectedRow() {
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
-        int row = table.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) getTable().getModel();
+        int row = getTable().getSelectedRow();
         int column =  2;
         int numberOfArticle = (int)model.getValueAt(row, column);
         if(numberOfArticle != 1) {

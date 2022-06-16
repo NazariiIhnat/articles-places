@@ -10,7 +10,7 @@ public class ItemsTable extends JTable {
     private TableModel customModel;
 
     public ItemsTable() {
-        this.customModel = new CustomTableModel(this);
+        this.customModel = new FromItemToRowModel(this);
         scrollPane = new JScrollPane();
         scrollPane.setViewportView(this);
     }
