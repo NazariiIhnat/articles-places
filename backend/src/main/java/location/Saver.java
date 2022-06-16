@@ -10,7 +10,7 @@ import utils.ImageHandler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-@Component
+@Component("locationSaver")
 public class Saver extends LocationHandler implements ActionListener {
 
     private UserReadableInfoSetFrame userReadableInfoSetFrame;
