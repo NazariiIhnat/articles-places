@@ -9,4 +9,5 @@ public interface TableModel {
     void addAll(List<Item> items);
     void set(List<Item> items);
     void deleteSelectedRow();
+    void reduceQuantityOfSelectedRow(int quantity);
 }

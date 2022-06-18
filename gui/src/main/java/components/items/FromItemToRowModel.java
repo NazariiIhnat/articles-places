@@ -3,7 +3,6 @@ package components.items;
 import entities.Item;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,21 +17,20 @@ public class FromItemToRowModel extends ItemsDefaultTableModel implements TableM
 
     @Override
     public void addItem(Item item) {
-        DefaultTableModel model = (DefaultTableModel) getTable().getModel();
         if(existInTable(item)) {
             int row = getRowNumber(item);
             int column = 2;
-            int numberOfItem = (int) model.getValueAt(row, column);
-            model.setValueAt(numberOfItem + 1, row, column);
-            model.fireTableCellUpdated(row, column);
+            int numberOfItem = (int) getValueAt(row, column);
+            setValueAt(numberOfItem + 1, row, column);
+            fireTableCellUpdated(row, column);
         } else {
-            model.addRow(new Object[]{
-                    model.getRowCount()+1,
+            addRow(new Object[]{
+                    getRowCount()+1,
                     item.getCode(),
                     1
             });
             int row = getRowNumber(item);
-            model.fireTableRowsInserted(row, row);
+            fireTableRowsInserted(row, row);
         }
         this.items.add(item);
     }
@@ -67,26 +65,28 @@ public class FromItemToRowModel extends ItemsDefaultTableModel implements TableM
 
     @Override
     public void set(List<Item> items) {
-        DefaultTableModel model = (DefaultTableModel) getTable().getModel();
         this.items.clear();
-        model.setRowCount(0);
+        setRowCount(0);
         addAll(items);
-        model.fireTableDataChanged();
+        fireTableDataChanged();
     }
 
     @Override
     public void deleteSelectedRow() {
-        DefaultTableModel model = (DefaultTableModel) getTable().getModel();
         int row = getTable().getSelectedRow();
-        int column =  2;
-        int numberOfItem = (int)model.getValueAt(row, column);
-        if(numberOfItem != 1) {
-            model.setValueAt(numberOfItem - 1, row, column);
-            model.fireTableCellUpdated(row, column);
-        } else {
-           model.removeRow(row);
-           this.items.remove(row);
-           model.fireTableRowsDeleted(row, row);
-        }
+        String code = (String) getValueAt(row, 1);
+        items.removeIf(item -> item.getCode().equals(code));
+        removeRow(row);
+        fireTableRowsDeleted(row, row);
+    }
+
+    @Override
+    public void reduceQuantityOfSelectedRow(int quantity) {
+        int row = getTable().getSelectedRow();
+        int column = 2;
+        int oldQuantity = (int)getValueAt(row, column);
+        int newQuantity = oldQuantity - quantity;
+        setValueAt(newQuantity, row, 2);
+        fireTableCellUpdated(row, 2);
     }
 }

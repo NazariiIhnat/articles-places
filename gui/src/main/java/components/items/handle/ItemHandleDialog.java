@@ -25,11 +25,6 @@ public class ItemHandleDialog extends JDialog {
         initOkButton();
     }
 
-    public static void main(String[] args) {
-        ItemHandleDialog dialog = new ItemHandleDialog(null);
-        dialog.setVisible(true);
-    }
-
     private void initTable() {
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setBounds(10, 11, 219, 239);

@@ -10,6 +10,7 @@ public class FromRowToItemModel extends ItemsDefaultTableModel {
     public FromRowToItemModel(JTable table) {
         super(table, new boolean[]{false, true, true});
         createChangeSelectionBindings();
+        createDeleteSelectedRowBindings();
         table.setRowSelectionAllowed(true);
         table.setColumnSelectionAllowed(true);
         addRow(1);
@@ -88,5 +89,19 @@ public class FromRowToItemModel extends ItemsDefaultTableModel {
 
     public void clearData() {
         getTable().setModel(new FromRowToItemModel(getTable()));
+    }
+
+    private void createDeleteSelectedRowBindings() {
+        getTable().getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_DELETE, 0), "Delete");
+        getTable().getActionMap().put("Delete", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int row = getTable().getSelectedRow();
+                removeRow(row);
+                for(int i = row; i < getRowCount(); i++)
+                    setValueAt(i+1, i, 0);
+            }
+        });
     }
 }
