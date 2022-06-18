@@ -27,13 +27,15 @@ public class ItemSaver {
         this.mainFrame = mainFrame;
         this.itemsDAO = itemsDAO;
         this.locationDAO = locationDAO;
-        mainFrame.getTreeItemList().getPopupMenu().getAddItemMenuItem().addActionListener(showItemHandleDialog());
-        dialog = new ItemHandleDialog(mainFrame);
-        dialog.getOkButton().addActionListener(saveItems());
+        mainFrame.getTreeItemList().getPopupMenu().getAddItemMenuItem().addActionListener(showItemHandleDialog());;
     }
 
     private ActionListener showItemHandleDialog() {
-        return x -> dialog.setVisible(true);
+        return x -> {
+            dialog = new ItemHandleDialog(mainFrame);
+            dialog.getOkButton().addActionListener(saveItems());
+            dialog.setVisible(true);
+        };
     }
 
     private ActionListener saveItems() {
@@ -51,9 +53,9 @@ public class ItemSaver {
                     item.setLocation(getSelectedLocation());
                     items.add(item);
                 }
-                dialog.setVisible(false);
-                dialog.getTable().getCustomModel().clearData();
-                }
+            }
+            dialog.setVisible(false);
+            dialog.getTable().getCustomModel().clearData();
             items.forEach(item -> {
                 itemsDAO.save(item);
                 mainFrame.getItemsTable().getCustomModel().addItem(item);
