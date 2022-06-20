@@ -7,7 +7,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 
 @Component
@@ -29,6 +28,15 @@ public class ItemsDAOImpl implements ItemsDAO {
     }
 
     @Override
+    public Item get(long id) {
+        try(Session session = sessionFactory.openSession()){
+            return session.get(Item.class, id);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    @Override
     @SuppressWarnings("unchecked")
     public List<Item> getByLocationID(long id) {
         String hql = "from Item where location_id = :id";
@@ -40,6 +48,20 @@ public class ItemsDAOImpl implements ItemsDAO {
             return items;
         } catch (Exception e) {
             return null;
+        }
+    }
+
+    @Override
+    public void delete(Item item) {
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+            if(item != null)
+                session.delete(item);
+            transaction.commit();
+        } catch (Exception e) {
+            if(transaction != null)
+                transaction.rollback();
         }
     }
 }

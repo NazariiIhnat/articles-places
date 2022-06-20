@@ -15,6 +15,7 @@
         <property name="hibernate.connection.characterEncoding">UTF-8</property>
         <property name="hibernate.connection.useUnicode">true</property>
         <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.current_session_context_class">thread</property>
         <mapping class="entities.Item"/>
         <mapping class="entities.Location"/>
     </session-factory>

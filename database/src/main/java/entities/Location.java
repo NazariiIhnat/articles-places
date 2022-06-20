@@ -23,15 +23,19 @@ public class Location {
     @JoinColumn(name = "parent_id")
     private List<Location> childLocations = new ArrayList<>();
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Item> items = new ArrayList<>();
 
     public void addCildLocation(Location location) {
         childLocations.add(location);
     }
 
-    public void addArticle(Item item) {
+    public void addItem(Item item) {
         items.add(item);
+    }
+
+    public void removeItem(Item item) {
+        items.remove(item);
     }
 
     public boolean hasChildLocation() {
