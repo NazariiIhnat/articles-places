@@ -12,5 +12,6 @@ public class Main {
         );
         MainFrame mainFrame = context.getBean(MainFrame.class);
         mainFrame.setVisible(true);
+        System.out.println();
     }
 }
