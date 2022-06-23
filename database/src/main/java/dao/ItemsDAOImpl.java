@@ -28,9 +28,15 @@ public class ItemsDAOImpl implements ItemsDAO {
     }
 
     @Override
-    public Item get(long id) {
+    @SuppressWarnings("unchecked")
+    public List<Item> getByCode(String code) {
+        String hql = "from Item where code = :code";
+        List<Item> items;
         try(Session session = sessionFactory.openSession()){
-            return session.get(Item.class, id);
+            Query query = session.createQuery(hql);
+            query.setParameter("code", code);
+            items = query.list();
+            return items;
         } catch (Exception e) {
             return null;
         }

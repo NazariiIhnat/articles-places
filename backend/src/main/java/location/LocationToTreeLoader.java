@@ -14,10 +14,11 @@ import java.util.stream.Collectors;
 public class LocationToTreeLoader {
 
     private List<Location> list;
+    private TreeItemList tree;
 
     @Autowired
     public LocationToTreeLoader(MainFrame mainFrame, LocationDAO locationDAO) {
-        TreeItemList tree = mainFrame.getTreeItemList();
+        tree = mainFrame.getTreeItemList();
         list = locationDAO.getAll();
         populateTree(getRoots(), tree.getRootNode());
     }
@@ -27,6 +28,7 @@ public class LocationToTreeLoader {
             list.forEach(container -> {
                 TreeNodeWithID node = new TreeNodeWithID(container.getId(), container.getUserReadableInfo());
                 rootNode.add(node);
+                tree.getCustomTreeModel().addNode(node);
                 if(container.hasChildLocation())
                     populateTree(container.getChildLocations(), node);
             });

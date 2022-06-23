@@ -69,7 +69,6 @@ public class MainFrame extends JFrame {
 
     @Getter
     public class Menu extends JMenuBar{
-        @Getter(AccessLevel.PACKAGE)
         private JMenuItem findItemMenuITem;
         @Getter(AccessLevel.PACKAGE)
         private JMenu optionsMenu;

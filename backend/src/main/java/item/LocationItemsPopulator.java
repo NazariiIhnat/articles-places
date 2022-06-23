@@ -33,9 +33,11 @@ public class LocationItemsPopulator implements TreeSelectionListener{
     @Override
     public void valueChanged(TreeSelectionEvent e) {
         TreeNodeWithID node = tree.getCustomTreeModel().getSelectedNode();
-        long id = node.getId();
-        List<Item> items = itemsDAO.getByLocationID(id);
-        if(items != null)
-            table.getCustomModel().set(items);
+        if(node != null) {
+            long id = node.getId();
+            List<Item> items = itemsDAO.getByLocationID(id);
+            if (items != null)
+                table.getCustomModel().set(items);
+        }
     }
 }

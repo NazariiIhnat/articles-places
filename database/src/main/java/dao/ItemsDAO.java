@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ItemsDAO {
     void save(Item item);
-    Item get(long id);
+    List<Item> getByCode(String code);
     List<Item> getByLocationID(long id);
     void delete(Item item);
 }
