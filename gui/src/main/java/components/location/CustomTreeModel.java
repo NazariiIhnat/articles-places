@@ -17,7 +17,7 @@ public class CustomTreeModel extends DefaultTreeModel implements TreeModel {
         this.tree.setModel(this);
     }
 
-    public void addNode(TreeNodeWithID node) {
+    public void  addNode(TreeNodeWithID node) {
         nodeMap.put(node.getId(), node);
         if(getSelectedNode() != null)
             insertNodeInto(node, getSelectedNode(), getSelectedNode().getChildCount());

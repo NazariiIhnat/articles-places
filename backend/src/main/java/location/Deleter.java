@@ -1,7 +1,9 @@
 package location;
 
 import components.MainFrame;
+import components.location.ShowMessage;
 import dao.LocationDAO;
+import entities.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import utils.ImageHandler;
@@ -23,6 +25,10 @@ public class Deleter extends LocationHandler implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        delete(getSelectedLocation().getId());
+        Location location = getSelectedLocation();
+        if(location.hasChildLocations() | location.hasItems())
+            ShowMessage
+                    .error("Błąd! Locacja \"" + location.getUserReadableInfo() + "\" zawiera inne lokacje lub towar!");
+        else delete(getSelectedLocation().getId());
     }
 }

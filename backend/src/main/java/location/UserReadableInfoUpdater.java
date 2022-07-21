@@ -2,7 +2,7 @@ package location;
 
 
 import components.MainFrame;
-import components.UserReadableInfoSetFrame;
+import components.UserReadableInfoSetDialog;
 import dao.LocationDAO;
 import entities.Location;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,29 +15,29 @@ import java.awt.event.ActionListener;
 @Component
 public class UserReadableInfoUpdater extends LocationHandler implements ActionListener {
 
-    private UserReadableInfoSetFrame userReadableInfoSetFrame;
+    private UserReadableInfoSetDialog userReadableInfoSetDialog;
 
     @Autowired
     public UserReadableInfoUpdater(MainFrame mainFrame, ImageHandler imageHandler, LocationDAO locationDAO) {
         super(mainFrame.getTreeItemList(), imageHandler, locationDAO);
-        this.userReadableInfoSetFrame = new UserReadableInfoSetFrame(mainFrame);
+        this.userReadableInfoSetDialog = new UserReadableInfoSetDialog(mainFrame);
         mainFrame
                 .getTreeItemList()
                 .getPopupMenu()
                 .getUpdateLocationMenuItem()
                 .addActionListener(x -> {
-                    this.userReadableInfoSetFrame.setVisible(true);
-                    userReadableInfoSetFrame.getTextField().setText(super.getSelectedLocation().getUserReadableInfo());
+                    this.userReadableInfoSetDialog.setVisible(true);
+                    userReadableInfoSetDialog.getTextField().setText(super.getSelectedLocation().getUserReadableInfo());
                 });
-        userReadableInfoSetFrame.getOkBtn().addActionListener(this);
+        userReadableInfoSetDialog.getOkBtn().addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Location location = getSelectedLocation();
-        String text = userReadableInfoSetFrame.getTextField().getText();
+        String text = userReadableInfoSetDialog.getTextField().getText();
         location.setUserReadableInfo(text);
         super.update(location);
-        userReadableInfoSetFrame.setVisible(false);
+        userReadableInfoSetDialog.dispose();
     }
 }

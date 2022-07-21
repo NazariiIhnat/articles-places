@@ -1,18 +1,20 @@
 package item;
 
 import components.MainFrame;
-import components.items.handle.ItemHandleDialog;
+import components.items.ItemReadUpdateDeleteTableModel;
+import components.items.create.ItemCreateTableModel;
+import components.items.create.ItemCreateDialog;
 import components.location.ShowMessage;
 import components.location.TreeNodeWithID;
+import dao.CodeDAO;
 import dao.ItemsDAO;
 import dao.LocationDAO;
+import entities.Code;
 import entities.Item;
 import entities.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class ItemSaver {
@@ -20,48 +22,78 @@ public class ItemSaver {
     private MainFrame mainFrame;
     private ItemsDAO itemsDAO;
     private LocationDAO locationDAO;
-    private ItemHandleDialog dialog;
+    private CodeDAO codeDAO;
+    private ItemCreateDialog dialog;
+    private Location selectedLocation;
+    private ItemReadUpdateDeleteTableModel model;
 
     @Autowired
-    public ItemSaver(MainFrame mainFrame, ItemsDAO itemsDAO, LocationDAO locationDAO) {
+    public ItemSaver(MainFrame mainFrame, ItemsDAO itemsDAO, LocationDAO locationDAO, CodeDAO codeDAO) {
         this.mainFrame = mainFrame;
         this.itemsDAO = itemsDAO;
         this.locationDAO = locationDAO;
-        mainFrame.getTreeItemList().getPopupMenu().getAddItemMenuItem().addActionListener(showItemHandleDialog());;
+        this.codeDAO = codeDAO;
+        this.model = (ItemReadUpdateDeleteTableModel) mainFrame.getTable().getModel();
+        dialog = new ItemCreateDialog(mainFrame);
+        mainFrame.getTreeItemList().getPopupMenu().getAddItemMenuItem().addActionListener(showItemHandleDialog());
+        dialog.getOkButton().addActionListener(saveItems());
     }
 
     private ActionListener showItemHandleDialog() {
-        return x -> {
-            dialog = new ItemHandleDialog(mainFrame);
-            dialog.getOkButton().addActionListener(saveItems());
-            dialog.setVisible(true);
-        };
+        return x -> dialog.setVisible(true);
     }
 
     private ActionListener saveItems() {
         return x -> {
-            List<Item> items = new ArrayList<>();
+            selectedLocation = getSelectedLocation();
             dialog.getTable().clearSelection();
             dialog.getTable().editCellAt(0, 0);
             if(isCorrectValues()){
-            for(Object[] obj : dialog.getTable().getValues()){
-                String code = (String) obj[1];
-                int quantity = Integer.parseInt((String) obj[2]);
-                for(int i = 0; i < quantity; i++){
-                    Item item = new Item();
-                    item.setCode(code);
-                    item.setLocation(getSelectedLocation());
-                    items.add(item);
+                for(Object[] obj : dialog.getTable().getValues()) {
+                    String strCode = (String) obj[1];
+                    Code code = codeDAO.get(strCode);
+                    int quantity = (int) obj[2];
+                    if (code != null) {
+                        if (getSelectedLocation().hasItem(strCode)) {
+                            Item item = selectedLocation
+                                    .getItems()
+                                    .stream()
+                                    .filter(i -> i.getCode().equals(strCode))
+                                    .findFirst()
+                                    .get();
+                            item.setQuantity(item.getQuantity() + quantity);
+                            itemsDAO.update(item);
+                            model.addItem(item);
+                        } else saveItem(code, quantity);
+                    } else {
+                        code = new Code(strCode);
+                        codeDAO.save(code);
+                        saveItem(code, quantity);
+                    }
                 }
-            }
-            dialog.setVisible(false);
-            dialog.getTable().getCustomModel().clearData();
-            items.forEach(item -> {
-                itemsDAO.save(item);
-                mainFrame.getItemsTable().getCustomModel().addItem(item);
-            });
+                dialog.getTable().setModel(new ItemCreateTableModel());
+                dialog.dispose();
+                mainFrame.setEnabled(true);
+                mainFrame.toFront();
             }
         };
+    }
+
+    private void saveItem(Code code, int quantity) {
+        Item item = new Item();
+        item.setQuantity(quantity);
+        item.setCode(code);
+        item.setLocation(selectedLocation);
+        model.addItem(item);
+        itemsDAO.save(item);
+        selectedLocation.addItem(item);
+        locationDAO.update(selectedLocation);
+        selectedLocation = getSelectedLocation();
+    }
+
+    private Location getSelectedLocation() {
+        TreeNodeWithID node = mainFrame.getTreeItemList().getCustomTreeModel().getSelectedNode();
+        return locationDAO.get(node.getId());
     }
 
     private boolean isCorrectValues() {
@@ -84,7 +116,7 @@ public class ItemSaver {
         boolean flag = true;
         for(Object [] obj : dialog.getTable().getValues()){
             try {
-                Integer.parseInt((String)obj[2]);
+                int i = (int)obj[2];
             } catch (NumberFormatException e){
                 ShowMessage.error("Podana niepoprawna ilość w wierszu № " + obj[0]);
                 flag = false;
@@ -92,10 +124,5 @@ public class ItemSaver {
             }
         }
         return flag;
-    }
-
-    private Location getSelectedLocation() {
-        TreeNodeWithID node = mainFrame.getTreeItemList().getCustomTreeModel().getSelectedNode();
-        return locationDAO.get(node.getId());
     }
 }

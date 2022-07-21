@@ -1,12 +1,15 @@
 package components;
 
-import components.items.ItemsTable;
+import com.formdev.flatlaf.FlatLightLaf;
+import components.items.ItemReadUpdateDeleteTable;
+import components.items.ItemReadUpdateDeleteTableModel;
 import components.location.TreeItemList;
 import lombok.AccessLevel;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 @Component
 @Getter
@@ -17,11 +20,13 @@ public class MainFrame extends JFrame {
     private TreeItemList treeItemList;
     private JTextField searchLocationTextFiled;
     private JTextField searchItemTextField;
-    private ItemsTable itemsTable;
+    private ItemReadUpdateDeleteTable table;
 
     public MainFrame() {
+        super("Article places");
+        setResizable(false);
         this.treeItemList = new TreeItemList();
-        this.itemsTable = new ItemsTable();
+        this.table = new ItemReadUpdateDeleteTable();
         initMainFrame();
         initMenu();
         initSearchLocationTextField();
@@ -32,7 +37,7 @@ public class MainFrame extends JFrame {
 
     private void initMainFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 409, 349);
+        setBounds(100, 100, 424, 349);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -53,7 +58,7 @@ public class MainFrame extends JFrame {
 
     private void initSearchItemTextField() {
         searchItemTextField = new JTextField();
-        searchItemTextField.setBounds(181, 31, 204, 20);
+        searchItemTextField.setBounds(181, 31, 219, 20);
         contentPane.add(searchItemTextField);
     }
 
@@ -63,8 +68,8 @@ public class MainFrame extends JFrame {
     }
 
     private void initItemsTable() {
-        itemsTable.getScrollPane().setBounds(181, 61, 204, 239);
-        contentPane.add(itemsTable.getScrollPane());
+        table.getScrollPane().setBounds(181, 61, 219, 239);
+        contentPane.add(table.getScrollPane());
     }
 
     @Getter

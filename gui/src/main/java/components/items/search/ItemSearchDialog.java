@@ -1,5 +1,6 @@
 package components.items.search;
 
+import components.DialogShowCloseAction;
 import lombok.Getter;
 
 import javax.swing.*;
@@ -15,7 +16,9 @@ public class ItemSearchDialog extends JDialog {
     private JTextField textField;
 
     public ItemSearchDialog(Frame owner) {
-        super(owner);
+        super(owner, "Znajdź towar");
+        setResizable(false);
+        addWindowListener(new DialogShowCloseAction());
         getContentPane().setLayout(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setBounds(100, 100, 409, 258);

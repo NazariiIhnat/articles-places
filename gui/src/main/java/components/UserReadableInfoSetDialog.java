@@ -4,15 +4,16 @@ import lombok.Getter;
 import javax.swing.*;
 
 @Getter
-public class UserReadableInfoSetFrame extends JDialog{
+public class UserReadableInfoSetDialog extends JDialog{
 
     private JTextField textField;
     private JButton okBtn;
 
-    public UserReadableInfoSetFrame(JFrame owner) {
-        super(owner, true);
+    public UserReadableInfoSetDialog(JFrame owner) {
+        super(owner, "Nowa lokacja", true);
         setBounds(100, 100, 237, 80);
         getContentPane().setLayout(null);
+        addWindowFocusListener(new DialogShowCloseAction());
         initTextField();
         initOkButton();
     }

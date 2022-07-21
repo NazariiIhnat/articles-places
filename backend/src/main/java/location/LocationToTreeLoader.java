@@ -29,7 +29,7 @@ public class LocationToTreeLoader {
                 TreeNodeWithID node = new TreeNodeWithID(container.getId(), container.getUserReadableInfo());
                 rootNode.add(node);
                 tree.getCustomTreeModel().addNode(node);
-                if(container.hasChildLocation())
+                if(container.hasChildLocations())
                     populateTree(container.getChildLocations(), node);
             });
         }

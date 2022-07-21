@@ -1,7 +1,8 @@
 package item;
 
 import components.MainFrame;
-import components.items.ItemsTable;
+import components.items.ItemReadUpdateDeleteTable;
+import components.items.ItemReadUpdateDeleteTableModel;
 import components.location.TreeItemList;
 import components.location.TreeNodeWithID;
 import dao.ItemsDAO;
@@ -11,21 +12,21 @@ import org.springframework.stereotype.Component;
 
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Component
 public class LocationItemsPopulator implements TreeSelectionListener{
 
     private TreeItemList tree;
-    private ItemsTable table;
+    private ItemReadUpdateDeleteTable table;
+    private ItemReadUpdateDeleteTableModel model;
     private ItemsDAO itemsDAO;
 
     @Autowired
     public LocationItemsPopulator(MainFrame frame, ItemsDAO itemsDAO) {
         tree = frame.getTreeItemList();
-        table = frame.getItemsTable();
+        table = frame.getTable();
+        model = (ItemReadUpdateDeleteTableModel) table.getModel();
         this.itemsDAO = itemsDAO;
         tree.addTreeSelectionListener(this);
     }
@@ -37,7 +38,7 @@ public class LocationItemsPopulator implements TreeSelectionListener{
             long id = node.getId();
             List<Item> items = itemsDAO.getByLocationID(id);
             if (items != null)
-                table.getCustomModel().set(items);
+                model.set(items);
         }
     }
 }

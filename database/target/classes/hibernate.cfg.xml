@@ -4,7 +4,7 @@
         "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.connection.url">jdbc:h2:~/items</property>
+        <property name="hibernate.connection.url">jdbc:h2:~/articles place</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">admin</property>
         <property name="hibernate.show_sql">true</property>
@@ -15,7 +15,9 @@
         <property name="hibernate.connection.characterEncoding">UTF-8</property>
         <property name="hibernate.connection.useUnicode">true</property>
         <property name="hibernate.connection.pool_size">10</property>
+        <property name="hibernate.current_session_context_class">thread</property>
         <mapping class="entities.Item"/>
         <mapping class="entities.Location"/>
+        <mapping class="entities.Code"/>
     </session-factory>
 </hibernate-configuration>

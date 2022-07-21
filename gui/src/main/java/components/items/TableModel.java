@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface TableModel {
     void addItem(Item item);
-    void addAll(List<Item> items);
-    void set(List<Item> items);
-    void deleteSelectedRow();
-    void reduceQuantityOfSelectedRow(int quantity);
+    void addAll(List<Item> itemProxies);
+    void set(List<Item> itemProxies);
+    void deleteRow(int row);
+    void reduceQuantityOfRow(int quantity, int row);
 }

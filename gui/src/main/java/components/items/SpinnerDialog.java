@@ -3,6 +3,8 @@ package components.items;
 import lombok.Getter;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseWheelListener;
 
@@ -14,7 +16,8 @@ public class SpinnerDialog extends JDialog {
     private JButton okButton;
 
     public SpinnerDialog(JFrame frame) {
-        super(frame);
+        super(frame, "Wyjmij ilość");
+        setResizable(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setBounds(100, 100, 176, 82);
         JPanel contentPane = new JPanel();
@@ -32,6 +35,16 @@ public class SpinnerDialog extends JDialog {
         spinnerNumberModel.setValue(spinnerNumberModel.getMinimum());
         spinner.setModel(spinnerNumberModel);
         spinner.addMouseWheelListener(changeValue());
+        spinnerNumberModel.addChangeListener(e -> {
+            Object value = spinnerNumberModel.getValue();
+            try{
+                int number = (int) value;
+                if(number > (Integer) spinnerNumberModel.getMaximum())
+                    spinnerNumberModel.setValue(spinnerNumberModel.getMaximum());
+            } catch (NumberFormatException ignored) {
+
+            }
+        });
 
         okButton = new JButton("OK");
         okButton.setBounds(86, 10, 62, 23);
@@ -42,7 +55,7 @@ public class SpinnerDialog extends JDialog {
         return e -> {
             if(e.getWheelRotation() == -1) {
                 try {
-                    if ((int) spinnerNumberModel.getNextValue() <= (int) spinnerNumberModel.getMaximum())
+                    if ((int) spinnerNumberModel.getNextValue() <= (Integer) spinnerNumberModel.getMaximum())
                         spinnerNumberModel.setValue(spinnerNumberModel.getNextValue());
                 } catch (NullPointerException ex){
                     spinnerNumberModel.setValue(spinnerNumberModel.getMaximum());
@@ -50,7 +63,7 @@ public class SpinnerDialog extends JDialog {
             }
             else {
                 try {
-                    if ((int) spinnerNumberModel.getPreviousValue() >= (int) spinnerNumberModel.getMinimum())
+                    if ((int) spinnerNumberModel.getPreviousValue() >= (Integer) spinnerNumberModel.getMinimum())
                         spinnerNumberModel.setValue(spinnerNumberModel.getPreviousValue());
                 } catch (NullPointerException ex) {
                     spinnerNumberModel.setValue(spinnerNumberModel.getMinimum());

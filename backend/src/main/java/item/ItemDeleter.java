@@ -1,7 +1,8 @@
 package item;
 
 import components.MainFrame;
-import components.items.ItemsTable;
+import components.items.ItemReadUpdateDeleteTable;
+import components.items.ItemReadUpdateDeleteTableModel;
 import components.location.TreeItemList;
 import components.location.TreeNodeWithID;
 import dao.ItemsDAO;
@@ -13,23 +14,23 @@ import org.springframework.stereotype.Component;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
 public class ItemDeleter implements ActionListener {
 
     private TreeItemList tree;
-    private ItemsTable table;
-    private JMenuItem deleteItemMenuItem;
+    private ItemReadUpdateDeleteTable table;
+    private ItemReadUpdateDeleteTableModel model;
     private ItemsDAO itemsDAO;
     private LocationDAO locationDAO;
 
     @Autowired
     private ItemDeleter(MainFrame mainFrame, ItemsDAO itemsDAO, LocationDAO locationDAO){
         tree = mainFrame.getTreeItemList();
-        table = mainFrame.getItemsTable();
-        deleteItemMenuItem = table.getPopupMenu().getDeleteItemMenuItem();
+        table = mainFrame.getTable();
+        JMenuItem deleteItemMenuItem = table.getPopupMenu().getDeleteItemMenuItem();
+        model = (ItemReadUpdateDeleteTableModel) table.getModel();
         this.itemsDAO = itemsDAO;
         this.locationDAO = locationDAO;
         deleteItemMenuItem.addActionListener(this);
@@ -40,17 +41,17 @@ public class ItemDeleter implements ActionListener {
         TreeNodeWithID node = tree.getCustomTreeModel().getSelectedNode();
         Location location = locationDAO.get(node.getId());
         String code = (String) table.getValueAt(table.getSelectedRow(), 1);
-        List<Item> itemsToDelete = location
+        Item itemToDelete = location
                 .getItems()
                 .stream()
                 .filter(x -> x.getCode().equals(code))
-                .collect(Collectors.toList());
-        itemsToDelete.forEach(x -> {
-            location.removeItem(x);
-            x.setLocation(null);
-        });
+                .findFirst()
+                .get();
+        location.removeItem(itemToDelete);
+        itemToDelete.setLocation(null);
+        itemToDelete.setCode(null);
         locationDAO.update(location);
-        itemsToDelete.forEach(itemsDAO::delete);
-        table.getCustomModel().deleteSelectedRow();
+        itemsDAO.delete(itemToDelete);
+        model.deleteRow(table.getSelectedRow());
     }
 }

@@ -25,6 +25,6 @@ public class BarcodeHandler {
         if(textLength/5 < 2)
             return 2;
         else
-            return textLength/5;
+            return textLength/4;
     }
 }

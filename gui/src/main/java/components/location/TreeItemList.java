@@ -30,11 +30,11 @@ public class TreeItemList extends JTree {
 
     private void initPopupMenu() {
         popupMenu = new PopupMenu();
-        popupMenu.addPopupMenuListener(disableUpdateAndDeleteMenuItemIfSelectedRootNode());
+        popupMenu.addPopupMenuListener(disableUpdateDeleteAndAddItemMenuItemsIfSelectedRootNode());
         setComponentPopupMenu(popupMenu);
     }
 
-    private PopupMenuListener disableUpdateAndDeleteMenuItemIfSelectedRootNode() {
+    private PopupMenuListener disableUpdateDeleteAndAddItemMenuItemsIfSelectedRootNode() {
         return new PopupMenuListener() {
             @Override
             public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
@@ -42,6 +42,7 @@ public class TreeItemList extends JTree {
                     if(customTreeModel.getSelectedNode().isRoot()) {
                         popupMenu.getUpdateLocationMenuItem().setEnabled(false);
                         popupMenu.getDeleteLocationMenuItem().setEnabled(false);
+                        popupMenu.getAddItemMenuItem().setEnabled(false);
                     }
                 }
             }
@@ -50,12 +51,14 @@ public class TreeItemList extends JTree {
             public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
                 popupMenu.getUpdateLocationMenuItem().setEnabled(true);
                 popupMenu.getDeleteLocationMenuItem().setEnabled(true);
+                popupMenu.getAddItemMenuItem().setEnabled(true);
             }
 
             @Override
             public void popupMenuCanceled(PopupMenuEvent e) {
                 popupMenu.getUpdateLocationMenuItem().setEnabled(true);
                 popupMenu.getDeleteLocationMenuItem().setEnabled(true);
+                popupMenu.getAddItemMenuItem().setEnabled(true);
             }
         };
     }

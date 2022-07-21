@@ -1,7 +1,6 @@
 package item;
 
 import components.MainFrame;
-import components.items.ItemsTable;
 import components.items.search.ItemSearchDialog;
 import components.location.TreeItemList;
 import components.location.TreeNodeWithID;
@@ -9,33 +8,28 @@ import dao.ItemsDAO;
 import entities.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Component
 public class ItemSearcher implements ActionListener {
 
     private MainFrame frame;
-    private JMenuItem findItemMenuItem;
     private TreeItemList tree;
     private ItemsDAO itemsDAO;
     private ItemSearchDialog searchDialog;
     private String searchingCode;
-    private Map<TreeNodeWithID, Integer>  nodesOfSearchingItemsAndQuantity;
+    private List<TreeNodeWithID> nodesOfSearchingItem;
 
     @Autowired
     public ItemSearcher(MainFrame frame, ItemsDAO itemsDAO){
         this.frame = frame;
-        findItemMenuItem = frame.getMenu().getFindItemMenuITem();
         tree = frame.getTreeItemList();
         this.itemsDAO = itemsDAO;
         searchDialog = new ItemSearchDialog(frame);
-        findItemMenuItem.addActionListener(this);
+        frame.getMenu().getFindItemMenuITem().addActionListener(this);
         searchDialog.getTextField().addKeyListener(searchWhenEnterKeyPressed());
         searchDialog.getSearchList().addMouseListener(selectSearchingItemInMainFrame());
     }
@@ -59,29 +53,29 @@ public class ItemSearcher implements ActionListener {
     }
 
     private void search() {
-        initNodesOfSearchingItemsAndQuantity();
+        searchingCode = searchDialog.getTextField().getText();
+        List<Item> items = itemsDAO.getByCode(searchingCode);
+        nodesOfSearchingItem = new ArrayList<>();
+        items.forEach(x -> nodesOfSearchingItem.add(tree.getCustomTreeModel().getNodeById(x.getLocation().getId())));
         StringBuilder builder = new StringBuilder();
-        nodesOfSearchingItemsAndQuantity.forEach((node, quantity) -> {
-            TreeNode[] path = node.getPath();
+        items.forEach(item -> {
+            TreeNode[] path = getNodePathForItem(item);
             for(TreeNode pathNode : path){
                 builder.append(pathNode.toString())
                         .append(" > ");
             }
             builder.append("ilość ")
-                    .append(quantity)
+                    .append(item.getQuantity())
                     .append(" szt.");
             searchDialog.getSearchList().getCustomListModel().addElement(builder.toString());
             builder.setLength(0);
         });
     }
 
-    private void initNodesOfSearchingItemsAndQuantity(){
-        searchingCode = searchDialog.getTextField().getText();
-        List<Item> items = itemsDAO.getByCode(searchingCode);
-        List<TreeNodeWithID> nodes = new ArrayList<>();
-        items.forEach(x -> nodes.add(tree.getCustomTreeModel().getNodeById(x.getLocation().getId())));
-        nodesOfSearchingItemsAndQuantity = new HashMap<>();
-        nodes.forEach(x -> nodesOfSearchingItemsAndQuantity.merge(x, 1, Integer::sum));
+    private TreeNode[] getNodePathForItem(Item item) {
+        long id = item.getLocation().getId();
+        TreeNodeWithID node = tree.getCustomTreeModel().getNodeById(id);
+        return node.getPath();
     }
 
     private MouseListener selectSearchingItemInMainFrame() {
@@ -90,14 +84,12 @@ public class ItemSearcher implements ActionListener {
             public void mouseClicked(MouseEvent e) {
                 if(e.getClickCount() == 2){
                     int selectedItem = searchDialog.getSearchList().getSelectedIndex();
-                    TreeNodeWithID selectedNode = (TreeNodeWithID) nodesOfSearchingItemsAndQuantity
-                            .keySet()
-                            .toArray()[selectedItem];
+                    TreeNodeWithID selectedNode = nodesOfSearchingItem.get(selectedItem);
                     tree.getNavigableTreeModel().selectNodeByID(selectedNode.getId());
-                    int rowCount = frame.getItemsTable().getModel().getRowCount();
+                    int rowCount = frame.getTable().getModel().getRowCount();
                     for(int i = 0; i < rowCount; i++) {
-                        if(frame.getItemsTable().getValueAt(i, 1).equals(searchingCode)) {
-                            frame.getItemsTable().changeSelection(i, 1, false, false);
+                        if(frame.getTable().getValueAt(i, 1).equals(searchingCode)) {
+                            frame.getTable().changeSelection(i, 1, false, false);
                             break;
                         }
                     }

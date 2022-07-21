@@ -6,14 +6,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 @Getter
-public class ItemsTable extends JTable {
+public class ItemReadUpdateDeleteTable extends ItemTable {
 
     private JScrollPane scrollPane;
-    private TableModel customModel;
     private PopupMenu popupMenu;
 
-    public ItemsTable() {
-        this.customModel = new FromItemToRowModel(this);
+    public ItemReadUpdateDeleteTable() {
+        super(new ItemReadUpdateDeleteTableModel());
         scrollPane = new JScrollPane();
         scrollPane.setViewportView(this);
         popupMenu = new PopupMenu();
