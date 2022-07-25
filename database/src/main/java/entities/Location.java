@@ -54,7 +54,7 @@ public class Location {
 
     public boolean hasItem(String code) {
         if(!hasItems()) return false;
-        else return items.stream().filter(x -> x.getCode().equals(code)).count() == 1;
+        else return items.stream().anyMatch(x -> x.getCode().equals(code));
     }
 
     public boolean hasItems() {return items.size() > 0;}

@@ -1,8 +1,8 @@
 package item;
 
 import components.MainFrame;
-import components.items.ItemReadUpdateDeleteTable;
 import components.items.ItemReadUpdateDeleteTableModel;
+import components.items.ItemTable;
 import components.location.TreeItemList;
 import components.location.TreeNodeWithID;
 import dao.ItemsDAO;
@@ -18,7 +18,7 @@ import java.util.List;
 public class LocationItemsPopulator implements TreeSelectionListener{
 
     private TreeItemList tree;
-    private ItemReadUpdateDeleteTable table;
+    private ItemTable table;
     private ItemReadUpdateDeleteTableModel model;
     private ItemsDAO itemsDAO;
 

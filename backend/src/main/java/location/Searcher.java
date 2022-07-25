@@ -40,6 +40,7 @@ public class Searcher implements KeyListener {
             } catch (NullPointerException ex) {
                 ShowMessage.error("Nie znaleziono lokacji z ID = " + text);
             }
+            textField.setText(null);
         }
     }
 

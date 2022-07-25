@@ -16,7 +16,7 @@
       <module name="articles place" target="1.8" />
       <module name="backend" target="9" />
       <module name="database" target="1.8" />
-      <module name="gui" target="9" />
+      <module name="gui" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

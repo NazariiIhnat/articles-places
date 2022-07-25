@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class ItemTableModel extends DefaultTableModel {
 
-    private Map<String, Integer> codeMap;
     private boolean[] columnsEditable;
     private static final String[] columnsName = {"\u2116", "Artyku\u0142", "Ilo\u015B\u0107"};
 
@@ -16,7 +15,6 @@ public class ItemTableModel extends DefaultTableModel {
 
     public ItemTableModel(boolean isCodeColumnEditable, boolean isQuantityColumnEditable){
         super(new Object[][]{}, columnsName);
-        this.codeMap = new HashMap<>();
         this.columnsEditable = new boolean[]{false, isCodeColumnEditable, isQuantityColumnEditable};
     }
 

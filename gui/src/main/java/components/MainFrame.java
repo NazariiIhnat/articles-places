@@ -1,15 +1,15 @@
 package components;
 
-import com.formdev.flatlaf.FlatLightLaf;
-import components.items.ItemReadUpdateDeleteTable;
 import components.items.ItemReadUpdateDeleteTableModel;
+import components.items.ItemTable;
 import components.location.TreeItemList;
 import lombok.AccessLevel;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import javax.swing.text.AbstractDocument;
+import java.awt.*;
 
 @Component
 @Getter
@@ -19,25 +19,37 @@ public class MainFrame extends JFrame {
     private Menu menu;
     private TreeItemList treeItemList;
     private JTextField searchLocationTextFiled;
-    private JTextField searchItemTextField;
-    private ItemReadUpdateDeleteTable table;
+    private JComboBox<String> comboBox;
+    private JCheckBox checkBox;
+    private JTextField codeTextField;
+    private JTextField quantityTextField;
+    private ItemTable table;
 
     public MainFrame() {
         super("Article places");
         setResizable(false);
         this.treeItemList = new TreeItemList();
-        this.table = new ItemReadUpdateDeleteTable();
+        this.table = new ItemTable(new ItemReadUpdateDeleteTableModel());
         initMainFrame();
         initMenu();
         initSearchLocationTextField();
-        initSearchItemTextField();
         initTreeItemList();
+        initCombobox();
+        initCheckBox();
+        initCodeTextField();
+        initQuantityTextField();
         initItemsTable();
+        checkBox.addActionListener(new DisableTextFieldWhenCheckBoxSelected(quantityTextField));
+    }
+
+    public static void main(String[] args) {
+        MainFrame frame = new MainFrame();
+        frame.setVisible(true);
     }
 
     private void initMainFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 424, 349);
+        setBounds(100, 100, 494, 500);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -52,24 +64,54 @@ public class MainFrame extends JFrame {
 
     private void initSearchLocationTextField() {
         searchLocationTextFiled = new JTextField();
-        searchLocationTextFiled.setBounds(10, 31, 161, 20);
+        searchLocationTextFiled.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        searchLocationTextFiled.setBounds(10, 31, 237, 26);
         contentPane.add(searchLocationTextFiled);
     }
 
-    private void initSearchItemTextField() {
-        searchItemTextField = new JTextField();
-        searchItemTextField.setBounds(181, 31, 219, 20);
-        contentPane.add(searchItemTextField);
-    }
-
     private void initTreeItemList() {
-        treeItemList.getScrollPane().setBounds(10, 61, 161, 239);
+        treeItemList.getScrollPane().setBounds(10, 65, 237, 385);
+        treeItemList.setFont(new Font("Tahoma", Font.PLAIN, 14));
         contentPane.add(treeItemList.getScrollPane());
     }
 
+    private void initCombobox() {
+        comboBox = new JComboBox<>();
+        comboBox.setModel(new DefaultComboBoxModel(new String[] {"Dodaj", "Wyjmij"}));
+        comboBox.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        comboBox.setBounds(257, 31, 105, 26);
+        contentPane.add(comboBox);
+    }
+
+    private void initCheckBox() {
+        checkBox = new JCheckBox("Pojedyncze");
+        checkBox.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        checkBox.setBounds(372, 31, 97, 26);
+        contentPane.add(checkBox);
+    }
+
+    private void initCodeTextField(){
+        codeTextField = new JTextField();
+        codeTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        codeTextField.setBounds(257, 66, 161, 26);
+        contentPane.add(codeTextField);
+    }
+
+    private void initQuantityTextField() {
+        quantityTextField = new JTextField();
+        quantityTextField.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        quantityTextField.setBounds(428, 66, 41, 26);
+        AbstractDocument document = (AbstractDocument) quantityTextField.getDocument();
+        document.setDocumentFilter(new NumberDocumentFilter());
+        contentPane.add(quantityTextField);
+    }
+
     private void initItemsTable() {
-        table.getScrollPane().setBounds(181, 61, 219, 239);
-        contentPane.add(table.getScrollPane());
+        JScrollPane scrollPane = new JScrollPane();
+        scrollPane.setBounds(257, 100, 212, 350);
+        table.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        scrollPane.setViewportView(table);
+        contentPane.add(scrollPane);
     }
 
     @Getter

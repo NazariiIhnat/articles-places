@@ -2,9 +2,9 @@ package item;
 
 import components.MainFrame;
 import components.items.ItemReadUpdateDeleteTableModel;
-import components.items.create.ItemCreateTableModel;
-import components.items.create.ItemCreateDialog;
+import components.items.ItemTable;
 import components.location.ShowMessage;
+import components.location.TreeItemList;
 import components.location.TreeNodeWithID;
 import dao.CodeDAO;
 import dao.ItemsDAO;
@@ -14,115 +14,132 @@ import entities.Item;
 import entities.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 @Component
 public class ItemSaver {
-
-    private MainFrame mainFrame;
     private ItemsDAO itemsDAO;
     private LocationDAO locationDAO;
     private CodeDAO codeDAO;
-    private ItemCreateDialog dialog;
+    private TreeItemList treeItemList;
+    private JComboBox<String> comboBox;
+    private JCheckBox checkBox;
+    private JTextField codeTextField;
+    private JTextField quantityTextField;
+    private ItemTable table;
     private Location selectedLocation;
-    private ItemReadUpdateDeleteTableModel model;
 
     @Autowired
     public ItemSaver(MainFrame mainFrame, ItemsDAO itemsDAO, LocationDAO locationDAO, CodeDAO codeDAO) {
-        this.mainFrame = mainFrame;
         this.itemsDAO = itemsDAO;
         this.locationDAO = locationDAO;
         this.codeDAO = codeDAO;
-        this.model = (ItemReadUpdateDeleteTableModel) mainFrame.getTable().getModel();
-        dialog = new ItemCreateDialog(mainFrame);
-        mainFrame.getTreeItemList().getPopupMenu().getAddItemMenuItem().addActionListener(showItemHandleDialog());
-        dialog.getOkButton().addActionListener(saveItems());
+        this.treeItemList = mainFrame.getTreeItemList();
+        this.comboBox = mainFrame.getComboBox();
+        this.checkBox = mainFrame.getCheckBox();
+        this.codeTextField = mainFrame.getCodeTextField();
+        this.quantityTextField = mainFrame.getQuantityTextField();
+        this.table = mainFrame.getTable();
+        codeTextField.addKeyListener(codeTextFieldSaveItemAction());
+        quantityTextField.addKeyListener(quantityTextFieldSaveItemAction());
     }
 
-    private ActionListener showItemHandleDialog() {
-        return x -> dialog.setVisible(true);
-    }
-
-    private ActionListener saveItems() {
-        return x -> {
-            selectedLocation = getSelectedLocation();
-            dialog.getTable().clearSelection();
-            dialog.getTable().editCellAt(0, 0);
-            if(isCorrectValues()){
-                for(Object[] obj : dialog.getTable().getValues()) {
-                    String strCode = (String) obj[1];
-                    Code code = codeDAO.get(strCode);
-                    int quantity = (int) obj[2];
-                    if (code != null) {
-                        if (getSelectedLocation().hasItem(strCode)) {
-                            Item item = selectedLocation
-                                    .getItems()
-                                    .stream()
-                                    .filter(i -> i.getCode().equals(strCode))
-                                    .findFirst()
-                                    .get();
-                            item.setQuantity(item.getQuantity() + quantity);
-                            itemsDAO.update(item);
-                            model.addItem(item);
-                        } else saveItem(code, quantity);
-                    } else {
-                        code = new Code(strCode);
-                        codeDAO.save(code);
-                        saveItem(code, quantity);
+    private KeyAdapter codeTextFieldSaveItemAction() {
+        return new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    if (comboBox.getModel().getSelectedItem().equals("Dodaj")) {
+                        if (getSelectedLocation() == null)
+                            ShowMessage.error("Błąd! Nie wybrano żadnej lokacji.");
+                        else {
+                            if (checkBox.isSelected()) {
+                                if (codeTextField.getText().trim().isEmpty())
+                                    ShowMessage.error("Błąd! Podany kod jest niepoprawny.");
+                                else {
+                                    doSave();
+                                    codeTextField.setText(null);
+                                }
+                            } else quantityTextField.grabFocus();
+                        }
                     }
                 }
-                dialog.getTable().setModel(new ItemCreateTableModel());
-                dialog.dispose();
-                mainFrame.setEnabled(true);
-                mainFrame.toFront();
             }
         };
     }
 
-    private void saveItem(Code code, int quantity) {
-        Item item = new Item();
-        item.setQuantity(quantity);
-        item.setCode(code);
-        item.setLocation(selectedLocation);
-        model.addItem(item);
-        itemsDAO.save(item);
-        selectedLocation.addItem(item);
-        locationDAO.update(selectedLocation);
+    private KeyAdapter quantityTextFieldSaveItemAction() {
+        return new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    if (comboBox.getModel().getSelectedItem().equals("Dodaj")){
+                        if (getSelectedLocation() == null)
+                            ShowMessage.error("Błąd! Nie wybrano żadnej lokacji.");
+                        else {
+                            if (codeTextField.getText().trim().isEmpty())
+                                ShowMessage.error("Błąd! Podany kod jest niepoprawny.");
+                            else if (quantityTextField.getText().trim().isEmpty())
+                                ShowMessage.error("Błąd! Podana ilość jest niepoprawna.");
+                            else {
+                                doSave();
+                                codeTextField.setText(null);
+                                quantityTextField.setText(null);
+                                codeTextField.grabFocus();
+                            }
+                        }
+                    }
+                }
+            }
+        };
+    }
+
+    private void doSave() {
         selectedLocation = getSelectedLocation();
+        String code = codeTextField.getText();
+        String stringQuantity = quantityTextField.getText();
+        int quantity;
+        try{
+            quantity = Integer.parseInt(stringQuantity);
+            if(selectedLocation.hasItem(code))
+                increaseQuantity(code, quantity);
+            else saveItem(code, quantity);
+        } catch (NumberFormatException ignore) {
+        }
     }
 
     private Location getSelectedLocation() {
-        TreeNodeWithID node = mainFrame.getTreeItemList().getCustomTreeModel().getSelectedNode();
-        return locationDAO.get(node.getId());
+        TreeNodeWithID node = treeItemList.getCustomTreeModel().getSelectedNode();
+        return node == null ? null : locationDAO.get(node.getId());
     }
 
-    private boolean isCorrectValues() {
-        return !areEmptyCells() && areCorrectQuantities();
+    private void increaseQuantity(String code, int quantity) {
+        Item item = selectedLocation
+                .getItems()
+                .stream()
+                .filter(i -> i.getCode().equals(code))
+                .findFirst()
+                .get();
+        ItemReadUpdateDeleteTableModel model = (ItemReadUpdateDeleteTableModel) table.getModel();
+        model.increaseQuantity(code, quantity);
+        item.setQuantity(item.getQuantity() + quantity);
+        itemsDAO.update(item);
     }
 
-    private boolean areEmptyCells() {
-        boolean flag = false;
-        for(Object[] objects : dialog.getTable().getValues()){
-            if(objects[1] == null | objects[2] == null){
-                flag = true;
-                ShowMessage.error("Nie podano danych w wierszu № " + objects[0]);
-                break;
-            }
+    private void saveItem(String code, int quantity) {
+        Code codeEntity = codeDAO.get(code);
+        if(codeEntity == null) {
+            codeEntity = new Code(code);
+            codeDAO.save(codeEntity);
         }
-        return flag;
-    }
-
-    private boolean areCorrectQuantities() {
-        boolean flag = true;
-        for(Object [] obj : dialog.getTable().getValues()){
-            try {
-                int i = (int)obj[2];
-            } catch (NumberFormatException e){
-                ShowMessage.error("Podana niepoprawna ilość w wierszu № " + obj[0]);
-                flag = false;
-                break;
-            }
-        }
-        return flag;
+        Item item = new Item();
+        item.setCode(codeEntity);
+        item.setLocation(selectedLocation);
+        item.setQuantity(quantity);
+        itemsDAO.save(item);
+        ItemReadUpdateDeleteTableModel model = (ItemReadUpdateDeleteTableModel) table.getModel();
+        model.addItem(code, quantity);
     }
 }
