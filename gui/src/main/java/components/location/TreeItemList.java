@@ -42,7 +42,6 @@ public class TreeItemList extends JTree {
                     if(customTreeModel.getSelectedNode().isRoot()) {
                         popupMenu.getUpdateLocationMenuItem().setEnabled(false);
                         popupMenu.getDeleteLocationMenuItem().setEnabled(false);
-                        popupMenu.getAddItemMenuItem().setEnabled(false);
                     }
                 }
             }
@@ -51,14 +50,12 @@ public class TreeItemList extends JTree {
             public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
                 popupMenu.getUpdateLocationMenuItem().setEnabled(true);
                 popupMenu.getDeleteLocationMenuItem().setEnabled(true);
-                popupMenu.getAddItemMenuItem().setEnabled(true);
             }
 
             @Override
             public void popupMenuCanceled(PopupMenuEvent e) {
                 popupMenu.getUpdateLocationMenuItem().setEnabled(true);
                 popupMenu.getDeleteLocationMenuItem().setEnabled(true);
-                popupMenu.getAddItemMenuItem().setEnabled(true);
             }
         };
     }
@@ -83,18 +80,15 @@ public class TreeItemList extends JTree {
     public class PopupMenu extends JPopupMenu {
         private JMenu addMenu;
         private JMenuItem addLocationMenuItem;
-        private JMenuItem addItemMenuItem;
         private JMenuItem updateLocationMenuItem;
         private JMenuItem deleteLocationMenuItem;
 
         PopupMenu() {
             addMenu = new JMenu("Dodaj");
             addLocationMenuItem = new JMenuItem("Lokacje");
-            addItemMenuItem = new JMenuItem("Towar");
             updateLocationMenuItem = new JMenuItem("Zaktualizuj");
             deleteLocationMenuItem = new JMenuItem("Usuń");
             addMenu.add(addLocationMenuItem);
-            addMenu.add(addItemMenuItem);
             add(addMenu);
             add(updateLocationMenuItem);
             add(deleteLocationMenuItem);

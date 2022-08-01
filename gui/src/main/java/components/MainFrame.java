@@ -42,11 +42,6 @@ public class MainFrame extends JFrame {
         checkBox.addActionListener(new DisableTextFieldWhenCheckBoxSelected(quantityTextField));
     }
 
-    public static void main(String[] args) {
-        MainFrame frame = new MainFrame();
-        frame.setVisible(true);
-    }
-
     private void initMainFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 494, 500);
